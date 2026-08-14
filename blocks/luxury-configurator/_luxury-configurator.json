@@ -1,0 +1,151 @@
+{
+  "definitions": [
+    {
+      "title": "Luxury Configurator",
+      "id": "luxury-configurator",
+      "model": "luxury-configurator",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "luxury-configurator",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "sku",
+          "label": "Parent SKU",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "value": "Bespoke Configuration Studio"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow",
+          "value": "Private Configuration Studio"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description",
+          "value": "Select your finish, material, and signature details. This experience refines a live Adobe Commerce product as you curate the final configuration."
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "theme",
+          "label": "Theme",
+          "value": "obsidian",
+          "options": [
+            {
+              "name": "Obsidian",
+              "value": "obsidian"
+            },
+            {
+              "name": "Emerald",
+              "value": "emerald"
+            },
+            {
+              "name": "Ivory",
+              "value": "ivory"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "layout",
+          "label": "Layout",
+          "value": "split-editorial",
+          "options": [
+            {
+              "name": "Split Editorial",
+              "value": "split-editorial"
+            },
+            {
+              "name": "Stacked Gallery",
+              "value": "stacked-gallery"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-summary",
+          "label": "Show Summary",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-price",
+          "label": "Show Price",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-gallery",
+          "label": "Show Gallery",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-spec-highlights",
+          "label": "Show Spec Highlights",
+          "value": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "attribute-groups",
+          "label": "Attribute Groups",
+          "value": "Materials: Material, Finish; Signature: Hardware, Scale"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta-label",
+          "label": "Primary CTA Label",
+          "value": "Add configured product to cart"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pdp-link-label",
+          "label": "PDP Link Label",
+          "value": "View full details"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "concierge-label",
+          "label": "Concierge Label",
+          "value": "Book concierge"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "concierge-href",
+          "label": "Concierge Href",
+          "value": "/support"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

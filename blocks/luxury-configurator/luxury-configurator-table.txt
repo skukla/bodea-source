@@ -1,0 +1,16 @@
+luxury-configurator
+sku	CONFIGURABLE-PARENT-SKU
+title	Bespoke Configuration Studio
+eyebrow	Private Configuration Studio
+description	Select your finish, material, and signature details. This experience refines a live Adobe Commerce product as you curate the final configuration.
+theme	obsidian
+layout	split-editorial
+show-summary	true
+show-price	true
+show-gallery	true
+show-spec-highlights	true
+attribute-groups	Materials: Material, Finish; Signature: Hardware, Scale
+cta-label	Add configured product to cart
+pdp-link-label	View full details
+concierge-label	Book concierge
+concierge-href	/support

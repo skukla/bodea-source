@@ -138,6 +138,9 @@
           "...": "../blocks/vip-member-block-real-v2/_*.json#/definitions"
         },
         {
+          "...": "../blocks/luxury-configurator/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/commerce-*/_*.json#/definitions"
         }
       ]

@@ -960,6 +960,16 @@
           }
         },
         {
+          "title": "Luxury Configurator",
+          "id": "luxury-configurator",
+          "model": "luxury-configurator",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
           "title": "Commerce Account Header",
           "id": "commerce-account-header",
           "model": "commerce-account-header",

@@ -1,0 +1,15 @@
+/*
+ * Fragment-backed customer-segment personalization container reset.
+ * Only remove the default section shell when fragment content is loaded.
+ */
+
+.customer-segment-personalization-block-container.customer-segment-personalization-block-container--fragment {
+  margin: 0;
+}
+
+.customer-segment-personalization-block-container.customer-segment-personalization-block-container--fragment > div,
+.customer-segment-personalization-block-container.customer-segment-personalization-block-container--fragment .customer-segment-personalization-block-wrapper {
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}

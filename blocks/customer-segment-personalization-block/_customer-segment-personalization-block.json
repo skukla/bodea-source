@@ -1,0 +1,39 @@
+{
+  "definitions": [
+    {
+      "title": "Customer Segment Personalization Block",
+      "id": "customer-segment-personalization-block",
+      "model": "customer-segment-personalization-block",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "customer-segment-personalization-block",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "content",
+          "label": "Content"
+        },
+        {
+          "component": "text",
+          "name": "customerSegments",
+          "label": "Customer Segments",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "fragment",
+          "label": "Fragment",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

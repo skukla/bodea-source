@@ -1,0 +1,377 @@
+/*
+ * Bodea brand theme — "editorial premium" green / ink / gold.
+ *
+ * ADDITIVE stylesheet: loaded AFTER /styles/styles.css (via a head <link> here,
+ * and via the Demo Builder brand-assets vendor point in generated storefronts).
+ * It only redefines boilerplate design tokens and layers brand-defining rules
+ * on top; it never forks or restates boilerplate defaults.
+ */
+
+/* 1. Display fonts (Google Fonts) — @import must precede all rules   */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Syne:wght@400;500;600;700&display=swap');
+
+/* 2. Design-token overrides (palette + typography)                   */
+
+:root, .dropin-design {
+  /* Editorial premium palette */
+  --green-900: #0a2918;
+  --green-800: #0f3d24;
+  --green-700: #155230;
+  --green-600: #1a6640;
+  --green-500: #1f7a4d;
+  --green-400: #26a067;
+  --green-300: #2ebe7a;
+  --green-200: #5fd49f;
+  --green-100: #a8edcc;
+  --green-50: #e8faf2;
+  --ink-950: #080c0a;
+  --ink-900: #0e1410;
+  --ink-800: #161d18;
+  --ink-700: #1f2b22;
+  --ink-600: #2d3d30;
+  --ink-500: #3d5342;
+  --ink-400: #5a7060;
+  --ink-300: #7f9985;
+  --ink-200: #b0c5b5;
+  --ink-100: #d8e5da;
+  --ink-50: #f2f7f3;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --cream: #faf8f3;
+
+  /* Primary brand token */
+  --main-color-accent: var(--green-400);
+
+  /* Dropin token remaps (only values that differ from boilerplate) */
+  --color-brand-300: var(--ink-500);
+  --color-brand-500: var(--ink-700);
+  --color-brand-600: var(--ink-800);
+  --color-brand-700: var(--ink-900);
+  --color-neutral-100: var(--ink-50);
+  --color-neutral-200: #e8efe9;
+  --color-neutral-300: var(--ink-100);
+  --color-neutral-400: var(--ink-200);
+  --color-neutral-500: var(--ink-300);
+  --color-neutral-600: var(--ink-400);
+  --color-neutral-700: var(--ink-500);
+  --color-neutral-800: var(--ink-700);
+  --color-neutral-900: var(--ink-900);
+  --color-positive-200: var(--green-50);
+  --color-positive-500: var(--green-300);
+  --color-positive-800: var(--green-600);
+  --color-warning-500: var(--gold-light);
+  --color-warning-800: var(--gold);
+
+  /* Typography */
+  --type-base-font-family: "Plus Jakarta Sans", "DM Sans", "Sora", system-ui, sans-serif;
+  --type-display-font-family: "Syne", "Sora", var(--type-base-font-family);
+  --font-display: var(--type-display-font-family);
+  --type-price-font-family: "Sora", "Syne", var(--type-base-font-family);
+  --type-price-default-font: normal normal 600 2.4rem/2.4rem var(--type-price-font-family);
+  --type-price-strong-font: normal normal 600 2.4rem/2.4rem var(--type-price-font-family);
+  --type-price-letter-spacing: -0.01em;
+  --type-display-1-font: normal normal 700 6rem/6.3rem var(--type-display-font-family);
+  --type-display-1-letter-spacing: -0.03em;
+  --type-display-2-font: normal normal 700 4.8rem/5.28rem var(--type-display-font-family);
+  --type-display-2-letter-spacing: -0.02em;
+  --type-display-3-font: normal normal 500 3.4rem/4.08rem var(--type-display-font-family);
+  --type-display-3-letter-spacing: -0.01em;
+  --type-headline-1-font: normal normal 400 2.4rem/3.12rem var(--type-display-font-family);
+  --type-headline-1-letter-spacing: 0;
+  --type-headline-2-default-font: normal normal 600 2rem/2.2rem var(--type-display-font-family);
+  --type-headline-2-default-letter-spacing: -0.01em;
+  --type-headline-2-strong-font: normal normal 700 2rem/2.2rem var(--type-display-font-family);
+  --type-headline-2-strong-letter-spacing: -0.02em;
+  --type-body-1-default-font: normal normal 500 1.8rem/2.88rem var(--type-base-font-family);
+  --type-body-1-default-letter-spacing: 0;
+  --type-body-1-strong-font: normal normal 600 1.8rem/2.88rem var(--type-base-font-family);
+  --type-body-1-strong-letter-spacing: 0;
+  --type-body-1-emphasized-font: normal normal 600 1.8rem/2.88rem var(--type-base-font-family);
+  --type-body-1-emphasized-letter-spacing: 0;
+  --type-body-2-default-font: normal normal 500 1.6rem/2.56rem var(--type-base-font-family);
+  --type-body-2-default-letter-spacing: 0;
+  --type-body-2-strong-font: normal normal 600 1.6rem/2.56rem var(--type-base-font-family);
+  --type-body-2-strong-letter-spacing: 0;
+  --type-body-2-emphasized-font: normal normal 600 1.6rem/2.56rem var(--type-base-font-family);
+  --type-body-2-emphasized-letter-spacing: 0;
+  --type-body-1-default-font-family: var(--type-base-font-family);
+  --type-body-2-default-font-family: var(--type-base-font-family);
+  --type-button-1-font: normal normal 500 2rem/2.8rem var(--type-base-font-family);
+  --type-button-2-font: normal normal 500 1.6rem/2.24rem var(--type-base-font-family);
+  --type-details-caption-1-font: normal normal 500 1.4rem/2.1rem var(--type-base-font-family);
+  --type-details-caption-1-letter-spacing: 0.01em;
+  --type-details-caption-2-font: normal normal 500 1.4rem/2.1rem var(--type-base-font-family);
+  --type-details-caption-2-letter-spacing: 0.01em;
+  --type-details-overline-font: normal normal 500 1.2rem/1.68rem var(--type-base-font-family);
+  --type-details-overline-letter-spacing: 0.08em;
+  --type-fixed-font-family: ui-monospace, "SFMono-Regular", menlo, consolas, "Liberation Mono", monospace, system-ui, sans-serif;
+
+  /* Page background */
+  --background-color: var(--cream);
+
+  /* Themeable glow triplets (rgb channels only — combine with alpha via rgb()) */
+  --accent-glow: 46 190 122;
+  --accent-deep-glow: 31 122 77;
+  --accent-dark-glow: 15 61 36;
+  --secondary-glow: 201 168 76;
+
+  /* Accent & shadow tokens (derived from --main-color-accent) */
+  --accent-1: var(--main-color-accent);
+  --accent-2: var(--green-500);
+  --accent-3: var(--gold);
+  --shadow-glass: 0 8px 32px rgb(0 0 0 / 10%);
+  --shadow-glass-hover: 0 12px 40px rgb(0 0 0 / 14%);
+  --shadow-button: 0 4px 14px rgb(var(--accent-deep-glow) / 36%);
+  --shadow-button-hover: 0 6px 20px rgb(var(--accent-deep-glow) / 48%);
+  --shadow-focus: 0 0 0 3px var(--color-neutral-50), 0 0 0 5px rgb(var(--accent-glow) / 45%);
+
+  /* Glassmorphic design system */
+  --glass-bg: rgb(255 255 255 / 58%);
+  --glass-bg-hover: rgb(255 255 255 / 72%);
+  --glass-bg-strong: rgb(255 255 255 / 84%);
+  --glass-border: rgb(255 255 255 / 74%);
+  --glass-border-subtle: rgb(var(--accent-dark-glow) / 12%);
+  --glass-blur: blur(24px);
+  --glass-blur-sm: blur(12px);
+  --glass-blur-xs: blur(8px);
+  --glass-saturate: saturate(160%);
+
+  /* Motion & easing */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s;
+  --transition-medium: 0.4s;
+  --transition-slow: 0.6s;
+}
+
+/* 3. Headings & links                                                */
+
+/* Gradient headings in section content (not in dark-glass sections) */
+main > .section:not(.dark-glass) > div > h1,
+main > .section:not(.dark-glass) > div > h2 {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a:not(.dropin-design a) {
+  color: var(--accent-1);
+  transition: color var(--transition-fast) var(--ease-out);
+}
+
+a:not(.dropin-design a):hover {
+  color: var(--accent-2);
+  text-underline-offset: 0.2em;
+}
+
+/* 4. Buttons — gradient primary, glass secondary                     */
+
+/* Covers the base button plus the boilerplate primary/accent variants,
+   whose higher-specificity rules would otherwise keep flat colors. */
+main a.button:any-link,
+button.button,
+a.button.primary,
+button.button.primary,
+a.button.accent,
+button.button.accent {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: var(--color-neutral-50);
+  text-align: center;
+  box-shadow: var(--shadow-button);
+  transition: transform var(--transition-fast) var(--ease-spring), box-shadow var(--transition-fast) var(--ease-out);
+}
+
+main a.button:hover,
+main a.button:focus,
+button.button:hover,
+button.button:focus,
+a.button.primary:hover,
+a.button.primary:focus-visible,
+button.button.primary:hover,
+button.button.primary:focus-visible,
+a.button.accent:hover,
+a.button.accent:focus-visible,
+button.button.accent:hover,
+button.button.accent:focus-visible {
+  border-color: transparent;
+  box-shadow: var(--shadow-button-hover);
+  transform: translateY(-1px);
+}
+
+main a.button:focus-visible,
+button.button:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Disabled: flat neutral, no lift (after the gradient rules so the
+   background shorthand clears the gradient image) */
+main a.button.disabled,
+a.button[aria-disabled='true'],
+a.button[aria-disabled='true']:hover,
+button.button:disabled,
+button.button:disabled:hover,
+button.button.primary:disabled,
+button.button.accent:disabled {
+  background: var(--color-neutral-300);
+  border-color: var(--color-neutral-300);
+  box-shadow: none;
+  transform: none;
+}
+
+main a.button.secondary,
+button.button.secondary {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur-sm);
+  border: var(--shape-border-width-2) solid var(--accent-1);
+  color: var(--accent-1);
+  box-shadow: none;
+}
+
+main a.button.secondary:hover,
+main a.button.secondary:focus-visible,
+button.button.secondary:hover,
+button.button.secondary:focus-visible {
+  background: var(--glass-bg-hover);
+  color: var(--accent-2);
+  transform: none;
+  box-shadow: none;
+}
+
+/* 5. Form inputs (main, non-dropin) — glass treatment                */
+
+main input:not([type='hidden'], .dropin-design input),
+main textarea:not(.dropin-design textarea),
+main select:not(.dropin-design select) {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur-xs);
+  border: var(--shape-border-width-1) solid var(--glass-border-subtle);
+  border-radius: var(--shape-border-radius-2);
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+main input:not([type='hidden']):hover:not(.dropin-design input),
+main textarea:hover:not(.dropin-design textarea),
+main select:hover:not(.dropin-design select) {
+  background: var(--glass-bg-hover);
+  border: var(--shape-border-width-1) solid var(--glass-border-subtle);
+}
+
+main input:not([type='hidden']):focus-visible:not(.dropin-design input),
+main textarea:focus-visible:not(.dropin-design textarea),
+main select:focus-visible:not(.dropin-design select) {
+  background: var(--glass-bg-strong);
+  border-color: var(--accent-1);
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* 6. Section styles (section-metadata "style" values)                */
+
+main .section.light,
+main .section.highlight {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur-sm);
+  border-top: 1px solid var(--glass-border-subtle);
+  border-bottom: 1px solid var(--glass-border-subtle);
+}
+
+main .section.glass {
+  margin: 0;
+  padding: var(--spacing-xbig) 0;
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--shape-border-radius-3);
+  box-shadow: var(--shadow-glass);
+  border: 1px solid var(--glass-border);
+}
+
+main .section.glass > div {
+  position: relative;
+}
+
+main .section.glass > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  border-radius: var(--shape-border-radius-3) var(--shape-border-radius-3) 0 0;
+}
+
+main .section.dark-glass {
+  margin: 0;
+  padding: var(--spacing-xbig) 0;
+  background: rgb(0 0 0 / 75%);
+  backdrop-filter: var(--glass-blur);
+  color: var(--color-neutral-100);
+  border: 1px solid rgb(255 255 255 / 20%);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.dark-glass h1,
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.dark-glass h2,
+main .section.dark-glass h3,
+main .section.dark-glass h4,
+main .section.dark-glass h5,
+main .section.dark-glass h6,
+main .section.dark-glass p,
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.dark-glass a {
+  color: inherit;
+}
+
+main .section.dark-glass a:hover {
+  color: var(--color-neutral-200);
+}
+
+/* 7. Decorative layer — pure CSS, no JS dependency                   */
+
+/* Floating gradient orbs behind content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgb(var(--accent-glow) / 16%), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgb(var(--accent-deep-glow) / 12%), transparent 45%),
+    radial-gradient(ellipse 50% 30% at 70% 80%, rgb(var(--accent-dark-glow) / 11%), transparent 45%),
+    radial-gradient(ellipse 40% 30% at 10% 70%, rgb(var(--secondary-glow) / 9%), transparent 45%);
+  filter: blur(60px);
+  animation: drift 25s ease-in-out infinite;
+}
+
+/* Subtle grid overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(0 0 0 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 0 0 / 3%) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(2%, -1%) scale(1.02); }
+  50% { transform: translate(-1%, 2%) scale(0.98); }
+  75% { transform: translate(1%, 1%) scale(1.01); }
+}
+
+/* Reduced motion: freeze the orbs */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}

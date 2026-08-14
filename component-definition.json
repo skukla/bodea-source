@@ -272,26 +272,6 @@
           }
         },
         {
-          "title": "Age Gate",
-          "id": "age-gate",
-          "model": "age-gate",
-          "plugins": {
-            "da": {
-              "type": "key-value-block"
-            }
-          }
-        },
-        {
-          "title": "Age Verification",
-          "id": "age-verification",
-          "model": "age-verification",
-          "plugins": {
-            "da": {
-              "type": "key-value-block"
-            }
-          }
-        },
-        {
           "title": "Blog Post",
           "id": "blog-post",
           "plugins": {
@@ -684,26 +664,6 @@
           }
         },
         {
-          "title": "Live Block",
-          "id": "live-block",
-          "model": "live-block",
-          "plugins": {
-            "da": {
-              "type": "key-value-block"
-            }
-          }
-        },
-        {
-          "title": "Live Block Premium",
-          "id": "live-block-premium",
-          "model": "live-block-premium",
-          "plugins": {
-            "da": {
-              "type": "key-value-block"
-            }
-          }
-        },
-        {
           "title": "Newsletter",
           "id": "newsletter",
           "plugins": {
@@ -721,19 +681,6 @@
             "da": {
               "name": "promotional-hero",
               "rows": 3,
-              "columns": 3
-            }
-          }
-        },
-        {
-          "title": "Quiz Router",
-          "id": "quiz-router",
-          "model": "quiz-router",
-          "filter": "quiz-router",
-          "plugins": {
-            "da": {
-              "name": "quiz-router",
-              "rows": 1,
               "columns": 3
             }
           }
@@ -789,38 +736,6 @@
               "rows": 3,
               "columns": 1,
               "behaviour": "columns"
-            }
-          }
-        },
-        {
-          "title": "Store Locator",
-          "id": "store-locator",
-          "plugins": {
-            "da": {
-              "name": "store-locator",
-              "rows": 20,
-              "columns": 6,
-              "behaviour": "columns"
-            }
-          }
-        },
-        {
-          "title": "Store Locator Item",
-          "id": "store-locator-item",
-          "plugins": {
-            "da": {
-              "name": "store-locator-item",
-              "behaviour": "columns-row"
-            }
-          }
-        },
-        {
-          "title": "Store Locator Cell",
-          "id": "store-locator-cell",
-          "plugins": {
-            "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
             }
           }
         },
@@ -936,26 +851,6 @@
                   "selector": "div>div>p>a"
                 }
               ]
-            }
-          }
-        },
-        {
-          "title": "VIP Hero",
-          "id": "vip-hero",
-          "model": "vip-hero",
-          "plugins": {
-            "da": {
-              "type": "key-value-block"
-            }
-          }
-        },
-        {
-          "title": "VIP Member Block Real V2",
-          "id": "vip-member-block-real-v2",
-          "model": "vip-member-block-real-v2",
-          "plugins": {
-            "da": {
-              "type": "key-value-block"
             }
           }
         },

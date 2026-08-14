@@ -40,7 +40,6 @@
         {
           "...": "../blocks/enrichment/_*.json#/definitions"
         },
-
         {
           "...": "../blocks/fragment/_*.json#/definitions"
         },
@@ -49,12 +48,6 @@
         },
         {
           "...": "../blocks/targeted-block/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/age-gate/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/age-verification/_*.json#/definitions"
         },
         {
           "...": "../blocks/blog-post/_*.json#/definitions"
@@ -90,19 +83,10 @@
           "...": "../blocks/how-it-works-stats/_*.json#/definitions"
         },
         {
-          "...": "../blocks/live-block/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/live-block-premium/_*.json#/definitions"
-        },
-        {
           "...": "../blocks/newsletter/_*.json#/definitions"
         },
         {
           "...": "../blocks/promotional-hero/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/quiz-router/_*.json#/definitions"
         },
         {
           "...": "../blocks/quote/_*.json#/definitions"
@@ -112,9 +96,6 @@
         },
         {
           "...": "../blocks/search-bar/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/store-locator/_*.json#/definitions"
         },
         {
           "...": "../blocks/table/_*.json#/definitions"
@@ -130,12 +111,6 @@
         },
         {
           "...": "../blocks/video/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/vip-hero/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/vip-member-block-real-v2/_*.json#/definitions"
         },
         {
           "...": "../blocks/luxury-configurator/_*.json#/definitions"

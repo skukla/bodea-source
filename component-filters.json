@@ -100,28 +100,8 @@
     ]
   },
   {
-    "id": "quiz-router",
-    "components": []
-  },
-  {
     "id": "search-bar",
     "components": []
-  },
-  {
-    "id": "store-locator",
-    "components": [
-      "store-locator-item"
-    ]
-  },
-  {
-    "id": "store-locator-item",
-    "components": []
-  },
-  {
-    "id": "store-locator-cell",
-    "components": [
-      "text"
-    ]
   },
   {
     "id": "table",

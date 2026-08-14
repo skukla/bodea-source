@@ -13,3 +13,30 @@
   margin: 0;
   padding: 0;
 }
+
+/* Authoring only (Universal Editor / DA preview): the block stays visible and
+   marks itself, so an author can select and configure it. Shoppers who match
+   no segment still see nothing — .is-authoring-preview is never set for them. */
+.customer-segment-personalization-block.is-authoring-preview {
+    outline: 1px dashed rgb(127 153 133 / 60%);
+    outline-offset: 4px;
+    position: relative;
+}
+
+.customer-segment-personalization-block.is-authoring-preview::before {
+    content: 'Segment-gated — hidden from shoppers who do not match';
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(127 153 133 / 90%);
+}
+
+.customer-segment-personalization-block__hint {
+    margin: 0;
+    padding: 16px;
+    border: 1px dashed rgb(127 153 133 / 60%);
+    border-radius: 8px;
+    font-size: 14px;
+}

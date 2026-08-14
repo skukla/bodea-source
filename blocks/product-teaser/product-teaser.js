@@ -137,6 +137,28 @@ function renderStandardImage(imageUrl, label, size) {
 }
 
 /**
+ * Replaces the loading placeholder with an authoring-facing explanation.
+ * Named so an SC can tell "this SKU isn't in the catalog yet" from "this block
+ * is broken" — the two are indistinguishable when the placeholder just stays.
+ * @param {HTMLElement} block
+ * @param {string} sku the SKU that could not be resolved
+ * @param {string} [reason] optional extra sentence
+ */
+function renderUnavailable(block, sku, reason) {
+  block.textContent = '';
+  const card = document.createElement('div');
+  card.className = 'product-teaser-unavailable';
+  const title = document.createElement('h3');
+  title.textContent = 'Product unavailable';
+  const body = document.createElement('p');
+  body.textContent = sku
+    ? `“${sku}” was not found in the Adobe Commerce catalog. ${reason || 'Check the SKU, or seed the catalog data for this demo.'}`
+    : 'Add a product SKU to this block so it can load from Adobe Commerce.';
+  card.append(title, body);
+  block.appendChild(card);
+}
+
+/**
  * Returns a picture element for product images
  * Automatically detects AEM Assets URLs vs standard Commerce URLs
  * and renders appropriately for each type
@@ -232,14 +254,24 @@ export default async function decorate(block) {
 
   renderPlaceholder(config, block);
 
-  const { products } = await performCatalogServiceQuery(productTeaserQuery, {
-    sku: config.sku,
-  });
-  if (!products || products.length === 0 || !products[0].sku) {
+  let product;
+  try {
+    const response = await performCatalogServiceQuery(productTeaserQuery, { sku: config.sku });
+    [product] = response?.products ?? [];
+  } catch (error) {
+    renderUnavailable(block, config.sku, 'The Adobe Commerce catalog could not be reached.');
     return;
   }
-  const [product] = products;
-  product.images = product.images.map((image) => ({ ...image, url: image.url.replace(/^https?:/, '') }));
+
+  // An unresolvable SKU must say so. Returning silently here left the grey
+  // placeholder on the page forever, which reads as a broken block rather than
+  // one waiting for its data — the likeliest state before a datapack is seeded.
+  if (!product?.sku) {
+    renderUnavailable(block, config.sku);
+    return;
+  }
+
+  product.images = (product.images ?? []).map((image) => ({ ...image, url: image.url.replace(/^https?:/, '') }));
 
   renderProduct(product, config, block);
 }

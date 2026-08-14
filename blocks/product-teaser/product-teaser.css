@@ -210,3 +210,27 @@
         justify-content: flex-start;
     }
 }
+
+/* Authoring-facing state: the SKU could not be resolved. Visible and named,
+   so a missing catalog reads as "needs data" rather than "block is broken". */
+.product-teaser .product-teaser-unavailable {
+    padding: 24px;
+    margin: 24px;
+    border: 1px dashed rgb(255 255 255 / 25%);
+    border-radius: var(--shape-border-radius-2, 8px);
+    width: 100%;
+}
+
+.product-teaser .product-teaser-unavailable h3 {
+    margin: 0 0 6px;
+    color: var(--color-neutral-50, #fff);
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.product-teaser .product-teaser-unavailable p {
+    margin: 0;
+    color: rgb(255 255 255 / 70%);
+    font-size: 14px;
+    line-height: 1.5;
+}

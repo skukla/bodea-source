@@ -707,7 +707,13 @@ function createProductCard(product) {
   } else {
     media.append(createElement('span', {
       className: 'guided-selling-luxe__product-fallback',
-      text: product.name.split(' ').slice(0, 2).map((entry) => entry[0]).join(''),
+      // Guarded: a search hit with no name would otherwise throw inside the
+      // hydration promise and strand the placeholder tiles permanently.
+      text: (product.name || '')
+        .split(' ')
+        .slice(0, 2)
+        .map((entry) => entry[0] || '')
+        .join('') || '·',
     }));
   }
 

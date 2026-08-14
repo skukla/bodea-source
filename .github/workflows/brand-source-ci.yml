@@ -1,0 +1,57 @@
+name: Brand Source CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Dropin import-map check (against b2b LKG)
+        run: node scripts/check-dropin-imports.mjs
+
+      - name: Tenant-leak grep
+        # Fails if any tracked file carries a demo-tenant identifier. Excludes:
+        # - this workflow file (it contains the patterns themselves)
+        # - cypress/ and demo-config-aco.json: upstream boilerplate sample
+        #   endpoints, inherited from adobe-commerce/boilerplate-b2b-template
+        #   where they are already public. Nothing Bodea-specific lives there.
+        run: |
+          if git grep -I -n -E 'sayurihanki|jenhankib2b|api\.commerce\.adobe\.com/[A-Za-z0-9]{20,}|AIza' -- \
+            ':!.github/workflows/brand-source-ci.yml' \
+            ':!cypress/' \
+            ':!demo-config-aco.json'; then
+            echo '::error::Tenant-identifying strings found in tracked files (see matches above)'
+            exit 1
+          fi
+          echo 'No tenant-identifying strings found'
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # --ignore-scripts skips the boilerplate postinstall (dropin vendoring
+      # download), which lint does not need. Runs the same eslint + stylelint
+      # commands as the boilerplate's `npm run lint`.
+      - name: Install lint toolchain
+        run: npm ci --ignore-scripts
+
+      - name: Lint JS
+        run: npx eslint .
+
+      - name: Lint CSS
+        run: npx stylelint 'blocks/**/*.css' 'styles/*.css'

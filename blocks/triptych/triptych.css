@@ -1,0 +1,513 @@
+.triptych-container {
+  padding: 0;
+}
+
+.triptych-container > .triptych-wrapper {
+  max-width: none;
+  width: 100%;
+}
+
+.triptych {
+  --triptych-cream: #f0ece4;
+  --triptych-ink: #1a1a17;
+  --triptych-surface: #b8d9bc;
+  --triptych-surface-strong: #3d6b45;
+  --triptych-surface-soft: #d4e8d6;
+  --triptych-panel-shadow: 0 28px 60px rgb(36 51 39 / 18%);
+  --triptych-card-shadow: 0 20px 44px rgb(22 31 24 / 18%);
+  --triptych-border: rgb(61 107 69 / 18%);
+  --triptych-caption-tone: rgb(26 26 23 / 68%);
+  --triptych-parallax-offset: 0px;
+  --triptych-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --triptych-display-font: "Instrument Serif", "Syne", georgia, serif;
+  --triptych-mono-font: "DM Mono", var(--type-fixed-font-family, ui-monospace, monospace);
+
+  background: var(--triptych-cream);
+  color: var(--triptych-ink);
+  font-family: var(--triptych-mono-font);
+  overflow: hidden;
+  position: relative;
+}
+
+.triptych[data-tone='stone'] {
+  --triptych-cream: #ece7e0;
+  --triptych-ink: #211d1a;
+  --triptych-surface: #d9cdc2;
+  --triptych-surface-strong: #7d6454;
+  --triptych-surface-soft: #efe4dc;
+  --triptych-panel-shadow: 0 28px 60px rgb(48 37 28 / 15%);
+  --triptych-card-shadow: 0 18px 42px rgb(40 28 20 / 16%);
+  --triptych-border: rgb(125 100 84 / 18%);
+}
+
+.triptych::after {
+  background-image: var(--triptych-noise);
+  background-size: 256px;
+  content: '';
+  inset: 0;
+  opacity: 0.024;
+  pointer-events: none;
+  position: absolute;
+  z-index: 4;
+}
+
+.triptych .triptych-scene {
+  min-height: clamp(1380px, 222vh, 2140px);
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.8rem, 4.4vw, 4.8rem);
+  position: relative;
+}
+
+.triptych .triptych-scene::before,
+.triptych .triptych-scene::after {
+  content: '';
+  height: 16vh;
+  inset-inline: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.triptych .triptych-scene::before {
+  background: linear-gradient(to bottom, var(--triptych-cream) 18%, transparent);
+  top: 0;
+}
+
+.triptych .triptych-scene::after {
+  background: linear-gradient(to top, var(--triptych-cream) 18%, transparent);
+  bottom: 0;
+}
+
+.triptych .triptych-shell {
+  margin: 0 auto;
+  max-width: 1700px;
+  min-height: inherit;
+  position: relative;
+}
+
+.triptych .triptych-cartography {
+  color: var(--triptych-surface-strong);
+  height: 100%;
+  opacity: 0.08;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: max(-10vw, -11rem);
+  top: 0;
+  width: min(70vw, 1020px);
+  z-index: 0;
+}
+
+.triptych .triptych-cartography svg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.triptych .triptych-oval-wrap {
+  display: flex;
+  justify-content: center;
+  min-height: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.triptych .triptych-oval {
+  align-items: center;
+  aspect-ratio: 454 / 829;
+  background:
+    radial-gradient(circle at 50% 28%, rgb(255 255 255 / 34%), transparent 34%),
+    linear-gradient(180deg, var(--triptych-surface-soft), var(--triptych-surface));
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 50%;
+  box-shadow: var(--triptych-panel-shadow);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transform: scale(0.2);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: min(438px, 84vw);
+}
+
+.triptych .triptych-oval.is-visible {
+  transform: scale(1);
+}
+
+.triptych .triptych-oval-cartography {
+  color: var(--triptych-surface-strong);
+  inset: 0;
+  opacity: 0.09;
+  pointer-events: none;
+  position: absolute;
+}
+
+.triptych .triptych-oval-cartography svg {
+  height: 122%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 122%;
+}
+
+.triptych .triptych-copy {
+  display: grid;
+  gap: 0.06em;
+  padding: 17% 18%;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.triptych .triptych-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+
+.triptych .triptych-line-inner {
+  display: block;
+  font-family: var(--triptych-display-font);
+  font-size: clamp(3rem, 3vw + 1rem, 4.9rem);
+  font-style: normal;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  opacity: 0;
+  transform: translateY(104%) skewX(6deg) scale(1.03);
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1) var(--triptych-line-delay, 0s),
+    opacity 1.05s cubic-bezier(0.16, 1, 0.3, 1) var(--triptych-line-delay, 0s);
+}
+
+.triptych .triptych-oval.is-visible .triptych-line-inner,
+.triptych .triptych-line-inner.is-static {
+  opacity: 1;
+  transform: translateY(0) skewX(0deg) scale(1);
+}
+
+.triptych .triptych-media-grid {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.triptych .triptych-media {
+  --triptych-card-width: clamp(224px, 18.8vw, 314px);
+
+  inset: auto;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(var(--triptych-parallax-offset));
+  width: var(--triptych-card-width);
+}
+
+.triptych .triptych-media-card {
+  display: grid;
+  gap: 0.86rem;
+  opacity: 0;
+  transform: scale(0.84) skewX(10deg) skewY(8deg);
+  transform-origin: center;
+  transition:
+    opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.triptych .triptych-media--1 {
+  left: 3%;
+  top: 5%;
+  width: clamp(238px, 18.9vw, 316px);
+}
+
+.triptych .triptych-media--2 {
+  left: 6%;
+  top: 29%;
+  width: clamp(252px, 20.2vw, 338px);
+}
+
+.triptych .triptych-media--3 {
+  right: 5%;
+  top: 5%;
+  width: clamp(232px, 18.5vw, 302px);
+}
+
+.triptych .triptych-media--4 {
+  right: 2%;
+  top: 32%;
+  width: clamp(246px, 19.8vw, 322px);
+}
+
+.triptych .triptych-media--5 {
+  bottom: 16%;
+  left: 10%;
+  width: clamp(264px, 22vw, 356px);
+}
+
+.triptych .triptych-media--6 {
+  bottom: 19%;
+  right: 7%;
+  width: clamp(236px, 18.8vw, 304px);
+}
+
+.triptych .triptych-media--7 {
+  bottom: 4.5%;
+  right: 13%;
+  width: clamp(262px, 21.5vw, 348px);
+}
+
+.triptych .triptych-media-frame {
+  aspect-ratio: 1 / 1.14;
+  background: rgb(255 255 255 / 38%);
+  border: 1px solid var(--triptych-border);
+  border-radius: 14px;
+  box-shadow: var(--triptych-card-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.triptych .triptych-media--2 .triptych-media-frame {
+  aspect-ratio: 1 / 1.08;
+}
+
+.triptych .triptych-media--3 .triptych-media-frame {
+  aspect-ratio: 5 / 4;
+}
+
+.triptych .triptych-media--4 .triptych-media-frame {
+  aspect-ratio: 1 / 1.18;
+}
+
+.triptych .triptych-media--5 .triptych-media-frame {
+  aspect-ratio: 16 / 10;
+}
+
+.triptych .triptych-media--6 .triptych-media-frame {
+  aspect-ratio: 1 / 1.14;
+}
+
+.triptych .triptych-media--7 .triptych-media-frame {
+  aspect-ratio: 16 / 10;
+}
+
+.triptych .triptych-picture,
+.triptych .triptych-picture picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.triptych .triptych-media-frame img,
+.triptych .triptych-picture img,
+.triptych .triptych-media-frame picture img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.triptych .triptych-media-placeholder {
+  animation: triptych-gradient-drift 12s ease infinite;
+  background-size: 220% 220%;
+  height: 100%;
+  width: 100%;
+}
+
+.triptych .triptych-media-placeholder--1 {
+  background-image: linear-gradient(135deg, #2d4a3e, #1f332a, #4b7d57);
+}
+
+.triptych .triptych-media-placeholder--2 {
+  background-image: linear-gradient(135deg, #416857, #284137, #7aa38b);
+}
+
+.triptych .triptych-media-placeholder--3 {
+  background-image: linear-gradient(135deg, #23392e, #17251f, #446a58);
+}
+
+.triptych .triptych-media-placeholder--4 {
+  background-image: linear-gradient(135deg, #365847, #22382f, #6a947b);
+}
+
+.triptych .triptych-media-placeholder--5 {
+  background-image: linear-gradient(135deg, #583b34, #321e1a, #8f6358);
+}
+
+.triptych .triptych-media-placeholder--6 {
+  background-image: linear-gradient(135deg, #2e4153, #1a2834, #62809c);
+}
+
+.triptych .triptych-media-placeholder--7 {
+  background-image: linear-gradient(135deg, #4c5634, #293019, #8d9862);
+}
+
+@keyframes triptych-gradient-drift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.triptych .triptych-caption {
+  margin: 0;
+  max-width: 25ch;
+  overflow: hidden;
+}
+
+.triptych .triptych-caption-inner {
+  color: var(--triptych-caption-tone);
+  display: block;
+  font-family: var(--triptych-mono-font);
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  opacity: 0;
+  transform: translateY(100%) skewX(8deg) scale(1.02);
+  transition:
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.26s,
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.26s;
+}
+
+.triptych[data-motion='off'] .triptych-oval,
+.triptych[data-motion='off'] .triptych-media-card,
+.triptych[data-motion='off'] .triptych-caption-inner,
+.triptych[data-motion='reduced'] .triptych-oval,
+.triptych[data-motion='reduced'] .triptych-media-card,
+.triptych[data-motion='reduced'] .triptych-caption-inner {
+  transition-duration: 0.01ms;
+}
+
+.triptych .triptych-media.is-visible .triptych-media-card {
+  opacity: 1;
+  transform: scale(1) skewX(0deg) skewY(0deg);
+}
+
+.triptych .triptych-media.is-visible .triptych-caption-inner {
+  opacity: 1;
+  transform: translateY(0) skewX(0deg) scale(1);
+}
+
+@media (max-width: 991px) {
+  .triptych .triptych-scene {
+    min-height: clamp(1320px, 210vh, 1840px);
+  }
+
+  .triptych .triptych-cartography {
+    right: -16vw;
+    width: min(90vw, 780px);
+  }
+
+  .triptych .triptych-oval {
+    width: min(424px, 88vw);
+  }
+
+  .triptych .triptych-media--1 {
+    left: 1%;
+    top: 4%;
+  }
+
+  .triptych .triptych-media--2 {
+    left: 1%;
+    top: 28%;
+  }
+
+  .triptych .triptych-media--3 {
+    right: 1%;
+    top: 5%;
+  }
+
+  .triptych .triptych-media--4 {
+    right: 0;
+    top: 32%;
+  }
+
+  .triptych .triptych-media--5 {
+    bottom: 20%;
+    left: 5%;
+    right: auto;
+  }
+
+  .triptych .triptych-media--6 {
+    bottom: 19%;
+    right: 4%;
+  }
+
+  .triptych .triptych-media--7 {
+    bottom: 5%;
+    right: 8%;
+  }
+}
+
+@media (max-width: 767px) {
+  .triptych .triptych-scene {
+    min-height: auto;
+    padding: 4.2rem 1.4rem 3.2rem;
+  }
+
+  .triptych .triptych-scene::before,
+  .triptych .triptych-scene::after {
+    display: none;
+  }
+
+  .triptych .triptych-shell {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .triptych .triptych-cartography {
+    height: 45%;
+    right: -24vw;
+    top: -2rem;
+    width: 110vw;
+  }
+
+  .triptych .triptych-oval-wrap {
+    min-height: auto;
+  }
+
+  .triptych .triptych-oval {
+    width: min(100%, 408px);
+  }
+
+  .triptych .triptych-copy {
+    padding: 18% 17%;
+  }
+
+  .triptych .triptych-line-inner {
+    font-size: clamp(2.7rem, 8vw, 4.2rem);
+  }
+
+  .triptych .triptych-media-grid {
+    display: grid;
+    gap: 1.8rem;
+    position: relative;
+  }
+
+  .triptych .triptych-media {
+    inset: auto;
+    position: relative;
+    transform: none;
+    width: 100%;
+  }
+
+  .triptych .triptych-media-card {
+    gap: 0.9rem;
+  }
+
+  .triptych .triptych-media-frame,
+  .triptych .triptych-media--2 .triptych-media-frame,
+  .triptych .triptych-media--3 .triptych-media-frame,
+  .triptych .triptych-media--4 .triptych-media-frame,
+  .triptych .triptych-media--5 .triptych-media-frame,
+  .triptych .triptych-media--6 .triptych-media-frame,
+  .triptych .triptych-media--7 .triptych-media-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .triptych .triptych-caption {
+    max-width: none;
+  }
+}

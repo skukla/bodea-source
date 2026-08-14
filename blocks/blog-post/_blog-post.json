@@ -1,0 +1,91 @@
+{
+  "definitions": [
+    {
+      "title": "Blog Post",
+      "id": "blog-post",
+      "plugins": {
+        "da": {
+          "name": "blog-post",
+          "rows": 1,
+          "columns": 1
+        }
+      },
+      "model": "blog-post"
+    }
+  ],
+  "models": [
+    {
+      "id": "blog-post",
+      "fields": [
+        {
+          "component": "select",
+          "name": "blogpost-layout",
+          "label": "Layout",
+          "options": [
+            { "name": "Classic", "value": "classic" },
+            { "name": "Centered", "value": "centered" },
+            { "name": "Magazine", "value": "magazine" },
+            { "name": "Split Cover", "value": "splitcover" }
+          ],
+          "value": "classic"
+        },
+        {
+          "component": "select",
+          "name": "blogpost-style",
+          "label": "Style",
+          "options": [
+            { "name": "Editorial", "value": "editorial" },
+            { "name": "Minimal", "value": "minimal" }
+          ],
+          "value": "editorial"
+        },
+        {
+          "component": "select",
+          "name": "blogpost-width",
+          "label": "Width",
+          "options": [
+            { "name": "Default", "value": "default" },
+            { "name": "Wide", "value": "wide" }
+          ],
+          "value": "default"
+        },
+        {
+          "component": "boolean",
+          "name": "blogpost-showhero",
+          "label": "Show Hero Image",
+          "value": true
+        },
+        {
+          "component": "select",
+          "name": "blogpost-heroratio",
+          "label": "Hero Ratio",
+          "options": [
+            { "name": "Wide (16:9)", "value": "wide" },
+            { "name": "Landscape (4:3)", "value": "landscape" },
+            { "name": "Square (1:1)", "value": "square" }
+          ],
+          "value": "wide"
+        },
+        {
+          "component": "boolean",
+          "name": "blogpost-showdescription",
+          "label": "Show Description",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "name": "blogpost-showmeta",
+          "label": "Show Author & Date",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "name": "blogpost-showtoc",
+          "label": "Show Table of Contents",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

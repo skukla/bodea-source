@@ -1,0 +1,333 @@
+/**
+ * product-highlights.css — BODÉA Enterprise Product Highlights Block
+ * AEM Edge Delivery Services block stylesheet.
+ *
+ * ─── SOURCE MAPPING ──────────────────────────────────────────────────────────
+ *
+ *  Every rule below maps 1-to-1 to a CSS rule in bodea-full.html.
+ *  Original class → EDS-scoped class (prefixed with .product-highlights)
+ *
+ *  bodea-full.html class      │ This file                                Source line
+ *  ───────────────────────────┼──────────────────────────────────────    ───────────
+ *  .products-section          │ .product-highlights                      ~686
+ *  .products-inner            │ .product-highlights > div                ~690
+ *  .products-header           │ .product-highlights .products-header     ~693
+ *  .products-grid             │ .product-highlights .products-grid       ~697
+ *  .product-card              │ .product-highlights .product-card        ~703
+ *  .product-card:hover        │ .product-highlights .product-card:hover  ~712
+ *  .product-card__img         │ .product-highlights .product-card__img   ~713
+ *  .product-card__badge       │ .product-highlights .product-card__badge ~720
+ *  .badge-new/hot/sale        │ .product-highlights .badge-*             ~728
+ *  .product-card__body        │ .product-highlights .product-card__body  ~728
+ *  .product-card__name        │ .product-highlights .product-card__name  ~729
+ *  .product-card__sku         │ .product-highlights .product-card__sku   ~734
+ *  .product-card__footer      │ .product-highlights .product-card__footer~735
+ *  .product-card__price       │ .product-highlights .product-card__price ~736
+ *  .product-card__add         │ .product-highlights .product-card__add   ~742
+ *  .product-card:hover .add   │ .product-highlights .product-card:hover… ~749
+ *
+ *  All design tokens are inherited from /styles/styles.css.
+ *  EDS automatically adds the block-name class (.product-highlights) to the
+ *  block wrapper, so all selectors here are correctly scoped.
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   BLOCK SHELL
+   Source: .products-section (line ~686)
+═══════════════════════════════════════════════════════════ */
+.product-highlights {
+  padding-block: 100px;
+  background: var(--color-cream, #fafaf8);
+}
+
+/* ── Max-width container ────────────────────────────────────
+   Source: .products-inner (line ~690)                       */
+.product-highlights > div {
+  max-width: 1360px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION HEADER
+   Source: .products-header (line ~693)
+   HTML:   <div class="products-header">
+             <div> [tag + title] </div>
+             <a>Browse full catalog →</a>
+           </div>
+═══════════════════════════════════════════════════════════ */
+.product-highlights .products-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-block-end: 48px;
+  gap: 40px;
+}
+
+/* Eyebrow pill — .section-tag shared class from styles.css */
+.product-highlights .section-tag {
+  margin-block-end: 10px;
+}
+
+/* Section headline — .section-title */
+.product-highlights .section-title {
+  font-family: var(--font-display, var(--type-display-font-family, sans-serif));
+  font-size: clamp(34px, 4.8vw, 64px);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  color: var(--color-ink-900, #0d1311);
+}
+
+/* "Browse full catalog →" link
+   Source: inline <a> style in bodea-full.html line ~1613 */
+.product-highlights .ph-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-green-500, #1a6640);
+  text-decoration: none;
+  white-space: nowrap;
+  margin-block-start: 8px;
+  flex-shrink: 0;
+  transition: gap .2s, color .2s;
+}
+
+.product-highlights .ph-cta:hover {
+  gap: 12px;
+  color: var(--color-green-700, #0f3d24);
+}
+
+.product-highlights .ph-cta svg { flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   PRODUCT GRID
+   Source: .products-grid (line ~697)
+   HTML:   <div class="products-grid"> … 6 cards … </div>
+═══════════════════════════════════════════════════════════ */
+.product-highlights .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRODUCT CARD — wrapper
+   Source: .product-card (line ~703)
+   HTML:   <div class="product-card">
+═══════════════════════════════════════════════════════════ */
+.product-highlights .product-card {
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-ink-100, #d4e3d9);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  /* Scroll-reveal: starts invisible; JS adds .is-visible */
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* Once JS adds .is-visible, card transitions to full opacity */
+.product-highlights .product-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity      .5s var(--ease-out-expo, cubic-bezier(.16,1,.3,1)),
+    transform    .5s var(--ease-out-expo),
+    box-shadow   .3s var(--ease-out-expo),
+    border-color .3s;
+}
+
+/* Stagger reveal per card position */
+.product-highlights .product-card:nth-child(1) { transition-delay: .05s; }
+.product-highlights .product-card:nth-child(2) { transition-delay: .10s; }
+.product-highlights .product-card:nth-child(3) { transition-delay: .15s; }
+.product-highlights .product-card:nth-child(4) { transition-delay: .20s; }
+.product-highlights .product-card:nth-child(5) { transition-delay: .25s; }
+.product-highlights .product-card:nth-child(6) { transition-delay: .30s; }
+
+/* Source: .product-card:hover (line ~712) */
+.product-highlights .product-card:hover {
+  box-shadow: 0 20px 60px rgb(0 0 0 / 10%);
+  transform: translateY(-5px);
+  border-color: var(--color-green-100, #a8edcc);
+}
+
+/* ── Image / emoji area ──────────────────────────────────────
+   Source: .product-card__img (line ~713)
+   HTML:   <div class="product-card__img">🖥️ <span class="badge">…</span></div>
+   Note:   background gradient is set inline per-card via JS              */
+.product-highlights .product-card__img {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+
+  /* Default gradient; JS overrides inline per card */
+  background: linear-gradient(
+    135deg,
+    var(--color-ink-50,   #f0f7f3) 0%,
+    var(--color-green-50, #e4f9ef) 100%
+  );
+  position: relative;
+}
+
+/* ── Badge ───────────────────────────────────────────────────
+   Source: .product-card__badge (line ~720)
+   HTML:   <span class="product-card__badge badge-new">New</span>          */
+.product-highlights .product-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Source: .badge-new / .badge-hot / .badge-sale (lines ~728–730) */
+.product-highlights .badge-new {
+  background: var(--color-green-300, #26a067);
+  color: #fff;
+}
+
+.product-highlights .badge-hot {
+  background: var(--color-coral, #e05c3a);
+  color: #fff;
+}
+
+.product-highlights .badge-sale {
+  background: var(--color-gold, #c9a84c);
+  color: #fff;
+}
+
+/* ── Card body ───────────────────────────────────────────────
+   Source: .product-card__body (line ~728)
+   HTML:   <div class="product-card__body">…</div>                         */
+.product-highlights .product-card__body {
+  padding: 20px;
+}
+
+/* Product name
+   Source: .product-card__name (line ~729) */
+.product-highlights .product-card__name {
+  font-family: var(--font-display, var(--type-display-font-family, sans-serif));
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  color: var(--color-ink-900, #0d1311);
+  margin-block-end: 4px;
+}
+
+/* SKU / spec line
+   Source: .product-card__sku (line ~734) */
+.product-highlights .product-card__sku {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-ink-300, #7d9985);
+  margin-block-end: 12px;
+}
+
+/* Price + add button row
+   Source: .product-card__footer (line ~735) */
+.product-highlights .product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Price
+   Source: .product-card__price (line ~736)
+   HTML:   <div class="product-card__price"><sup>$</sup>4,299</div>         */
+.product-highlights .product-card__price {
+  font: var(--type-price-strong-font);
+  letter-spacing: var(--type-price-letter-spacing);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  color: var(--color-ink-900, #0d1311);
+}
+
+/* Source: .product-card__price sup (line ~741) */
+.product-highlights .product-card__price sup {
+  font-size: 13px;
+  font-weight: 700;
+  vertical-align: super;
+}
+
+/* Add-to-cart button
+   Source: .product-card__add (line ~742) */
+.product-highlights .product-card__add {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--color-green-50, #e4f9ef);
+  color: var(--color-green-500, #1a6640);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 300;
+  border: 1.5px solid var(--color-green-100, #a8edcc);
+  cursor: pointer;
+  transition: all .25s var(--ease-spring, cubic-bezier(.34, 1.56, .64, 1));
+}
+
+/* Source: .product-card:hover .product-card__add (line ~749) */
+.product-highlights .product-card:hover .product-card__add {
+  background: var(--color-green-300, #26a067);
+  color: #fff;
+  border-color: var(--color-green-300, #26a067);
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* JS adds .added class for 1.5 s after click */
+.product-highlights .product-card__add.added {
+  background: var(--color-green-300, #26a067);
+  color: #fff;
+  border-color: var(--color-green-300, #26a067);
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .product-highlights .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .product-highlights {
+    padding-block: 60px;
+  }
+
+  .product-highlights > div {
+    padding-inline: 20px;
+  }
+
+  .product-highlights .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-block-end: 28px;
+  }
+
+  .product-highlights .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-highlights .product-card__img {
+    height: 140px;
+    font-size: 56px;
+  }
+}

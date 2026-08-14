@@ -1,0 +1,23 @@
+{
+  "definitions": [
+    {
+      "title": "Product Highlights",
+      "id": "product-highlights",
+      "model": "product-highlights",
+      "plugins": {
+        "da": {
+          "name": "product-highlights",
+          "rows": 4,
+          "columns": 2
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "product-highlights",
+      "fields": []
+    }
+  ],
+  "filters": []
+}

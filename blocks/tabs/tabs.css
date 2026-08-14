@@ -1,0 +1,120 @@
+.tabs .tabs-list {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  font-size: var(--body-font-size-s);
+  overflow-x: auto;
+  padding: 14px;
+  background: rgb(255 255 255 / 34%);
+  border: 1px solid rgb(255 255 255 / 48%);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 26%) inset,
+    0 16px 34px rgb(46 23 84 / 8%);
+  backdrop-filter: blur(14px) saturate(125%);
+}
+
+@media (min-width: 600px) {
+  .tabs .tabs-list {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+@media (min-width: 900px) {
+  .tabs .tabs-list {
+    font-size: var(--body-font-size-l);
+  }
+}
+
+.tabs .tabs-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  border: 1px solid rgb(255 255 255 / 0%);
+  border-radius: 34px;
+  padding: 16px 30px;
+  background: transparent;
+  color: #5e5a67;
+  line-height: unset;
+  text-align: initial;
+  text-overflow: unset;
+  overflow: unset;
+  white-space: unset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition:
+    background 0.3s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),
+    color 0.2s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color 0.2s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),
+    box-shadow 0.3s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+@media (max-width: 768px) {
+  .tabs .tabs-list button {
+    font-size: 15px;
+    padding: 12px 22px;
+  }
+}
+
+.tabs .tabs-list button p {
+  margin: 0;
+}
+
+.tabs .tabs-list button:hover {
+  background: rgb(255 255 255 / 36%);
+  color: #5f2bd5;
+  border-color: rgb(255 255 255 / 44%);
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+  background: rgb(255 255 255 / 72%);
+  color: #6c2be9;
+  border-color: rgb(255 255 255 / 62%);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 56%) inset,
+    0 8px 22px rgb(101 46 198 / 13%);
+  backdrop-filter: blur(7px);
+  font-weight: 700;
+}
+
+.tabs .tabs-panel {
+  margin-top: 16px;
+  padding: 48px;
+  background: rgb(255 255 255 / 40%);
+  border: 1px solid rgb(255 255 255 / 52%);
+  border-radius: 26px;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 30%) inset,
+    0 22px 48px rgb(35 20 68 / 9%);
+  overflow: auto;
+  position: relative;
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
+@media (max-width: 768px) {
+  .tabs .tabs-panel {
+    padding: 24px;
+  }
+}
+
+.tabs .tabs-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(175 147 230 / 24%) 35%,
+    rgb(197 172 245 / 20%) 50%,
+    rgb(216 197 252 / 14%) 68%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+  display: none;
+}

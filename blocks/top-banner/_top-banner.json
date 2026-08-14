@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "title": "Top Banner",
+      "id": "top-banner",
+      "plugins": {
+        "da": {
+          "name": "top-banner",
+          "rows": 8,
+          "columns": 4
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "top-banner",
+      "fields": []
+    }
+  ],
+  "filters": []
+}

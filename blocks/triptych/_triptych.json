@@ -1,0 +1,127 @@
+{
+  "definitions": [
+    {
+      "title": "Triptych",
+      "id": "triptych",
+      "model": "triptych",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "triptych",
+      "fields": [
+        { "component": "text", "valueType": "string", "name": "line1", "label": "Line 1", "value": "When" },
+        { "component": "text", "valueType": "string", "name": "line2", "label": "Line 2", "value": "nature" },
+        { "component": "text", "valueType": "string", "name": "line3", "label": "Line 3", "value": "perfects" },
+        { "component": "text", "valueType": "string", "name": "line4", "label": "Line 4", "value": "something," },
+        { "component": "text", "valueType": "string", "name": "line5", "label": "Line 5", "value": "we don't" },
+        { "component": "text", "valueType": "string", "name": "line6", "label": "Line 6", "value": "alter it, we" },
+        { "component": "text", "valueType": "string", "name": "line7", "label": "Line 7", "value": "reveal it." },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media1",
+          "label": "Media 1",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption1",
+          "label": "Caption 1",
+          "value": "Purity is not created. It's preserved."
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media2",
+          "label": "Media 2",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption2",
+          "label": "Caption 2",
+          "value": "Aupale exists not to reinvent, but to respect."
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media3",
+          "label": "Media 3",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption3",
+          "label": "Caption 3",
+          "value": "We let time, patience, and precision guide every step."
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media4",
+          "label": "Media 4",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption4",
+          "label": "Caption 4",
+          "value": "Materials carry memory long before they carry color."
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media5",
+          "label": "Media 5",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption5",
+          "label": "Caption 5",
+          "value": "Each finish is chosen to feel discovered, not manufactured."
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media6",
+          "label": "Media 6",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption6",
+          "label": "Caption 6",
+          "value": "Quiet structure lets texture do the speaking."
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "media7",
+          "label": "Media 7",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption7",
+          "label": "Caption 7",
+          "value": "The final layer should feel gathered over time, not rushed."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

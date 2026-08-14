@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Video",
+      "id": "video",
+      "model": "video",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "poster", "selector": "div>div>picture>img[src]" },
+            { "name": "posterAlt", "selector": "div>div>picture>img[alt]" },
+            { "name": "videoUrl", "selector": "div>div>p>a[href]" },
+            { "name": "videoUrlText", "selector": "div>div>p>a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "video",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "poster",
+          "label": "Poster Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "posterAlt",
+          "label": "Poster Alt Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "videoUrl",
+          "label": "Video URL",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "videoUrlText",
+          "label": "Video URL Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

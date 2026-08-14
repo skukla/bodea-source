@@ -1,0 +1,56 @@
+{
+  "definitions": [
+    {
+      "title": "Table",
+      "id": "table",
+      "model": "table",
+      "filter": "table",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 3,
+          "behaviour": "columns"
+        }
+      }
+    },
+    {
+      "title": "Table Row",
+      "id": "table-row",
+      "plugins": {
+        "da": {
+          "behaviour": "columns-row"
+        }
+      }
+    },
+    {
+      "title": "Table Cell",
+      "id": "table-cell",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div></div>",
+          "behaviour": "columns-cell"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "table",
+      "fields": []
+    }
+  ],
+  "filters": [
+    {
+      "id": "table",
+      "components": ["table-row"]
+    },
+    {
+      "id": "table-row",
+      "components": []
+    },
+    {
+      "id": "table-cell",
+      "components": ["text"]
+    }
+  ]
+}

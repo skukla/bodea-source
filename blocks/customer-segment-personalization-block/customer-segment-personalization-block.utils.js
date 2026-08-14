@@ -1,4 +1,4 @@
-export const MISSING_CUSTOMER_SEGMENTS_WARNING = '[customer-segment-personalization-block] Missing customerSegments authoring. The block will remain hidden.';
+export const MISSING_CUSTOMER_SEGMENTS_WARNING = '[customer-segment-personalization-block] Missing customer-segments authoring. The block will remain hidden.';
 
 function encodeBase64(value) {
   if (typeof btoa === 'function') {

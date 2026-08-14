@@ -22,7 +22,7 @@
         },
         {
           "component": "text",
-          "name": "customerSegments",
+          "name": "customer-segments",
           "label": "Customer Segments",
           "valueType": "string"
         },

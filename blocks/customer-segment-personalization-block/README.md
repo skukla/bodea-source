@@ -13,12 +13,12 @@ Content can be authored inline or loaded from a fragment path.
 | Field | Purpose |
 |-------|---------|
 | `content` | Inline content rendered when no fragment is configured |
-| `customerSegments` | Comma-separated list of raw Adobe Commerce customer segment IDs |
+| `customer-segments` | Comma-separated list of raw Adobe Commerce customer segment IDs |
 | `fragment` | Optional fragment path to load instead of inline content |
 
 ## Configuration Rules
 
-### `customerSegments`
+### `customer-segments`
 
 - Required.
 - Provide a comma-separated list of raw Adobe Commerce customer segment IDs.
@@ -31,7 +31,7 @@ Content can be authored inline or loaded from a fragment path.
 - Optional.
 - When set, the block loads content from the fragment path using the fragment loader.
 - When not set, the block uses the authored `content` row.
-- If `customerSegments` is missing, the block skips fragment loading and stays hidden.
+- If `customer-segments` is missing, the block skips fragment loading and stays hidden.
 
 ## Runtime Integration
 
@@ -46,7 +46,7 @@ The block hides itself immediately during decorate to avoid a flash of untargete
 
 The block is visible only when:
 
-1. At least one valid `customerSegments` value is authored.
+1. At least one valid `customer-segments` value is authored.
 2. The runtime personalization `segments` array contains at least one matching base64-encoded segment UID.
 
 If either condition fails, the block stays hidden.
@@ -57,4 +57,4 @@ If either condition fails, the block stays hidden.
 - Verify fragment content renders for a shopper with a matching segment.
 - Verify the block stays hidden for a shopper with no matching segments.
 - Verify the block updates after `personalization/updated`.
-- Verify missing `customerSegments` logs a warning and skips fragment loading.
+- Verify missing `customer-segments` logs a warning and skips fragment loading.

@@ -140,9 +140,21 @@ function renderStandardImage(imageUrl, label, size) {
  * Returns a picture element for product images
  * Automatically detects AEM Assets URLs vs standard Commerce URLs
  * and renders appropriately for each type
+ *
+ * A product with no Catalog Service image role gets a neutral placeholder
+ * rather than an exception: this runs after the block has been emptied, so
+ * throwing here would leave a permanently blank teaser on the page.
  */
 function renderImage(product, size = 250) {
-  const { url: imageUrl, label } = product.images[0];
+  const [image] = product.images ?? [];
+  if (!image?.url) {
+    const placeholder = document.createElement('div');
+    placeholder.className = 'image-placeholder';
+    placeholder.setAttribute('role', 'img');
+    placeholder.setAttribute('aria-label', product.name || 'Product image unavailable');
+    return placeholder;
+  }
+  const { url: imageUrl, label } = image;
 
   // Detect URL type and render appropriately
   if (isAemAssetsUrl(imageUrl)) {

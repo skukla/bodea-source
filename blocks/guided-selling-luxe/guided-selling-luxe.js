@@ -253,7 +253,12 @@ async function hydrateModuleProducts(runtime, module) {
     sort: module.config.sort || 'position_DESC',
   });
 
-  const promise = search(request, { scope: SEARCH_SCOPE })
+  // The product-discovery dropin needs its initializer before search() has an
+  // endpoint. Other blocks (search-bar, PLP) import it too, but this block can
+  // be the only one on a page — without this the search silently returns
+  // nothing and every result tile renders empty.
+  const promise = import('../../scripts/initializers/search.js')
+    .then(() => search(request, { scope: SEARCH_SCOPE }))
     .then((result) => result?.items || [])
     .catch(() => []);
 

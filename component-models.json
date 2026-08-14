@@ -674,6 +674,28 @@
     ]
   },
   {
+    "id": "customer-segment-personalization-block",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content"
+      },
+      {
+        "component": "text",
+        "name": "customerSegments",
+        "label": "Customer Segments",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "fragment",
+        "label": "Fragment",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "embed",
     "fields": [
       {
@@ -1168,6 +1190,284 @@
         "valueType": "string",
         "name": "buttonSecondary",
         "label": "Secondary Button Link"
+      }
+    ]
+  },
+  {
+    "id": "live-block-premium",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": "Live Commerce Dashboard"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "guest-cta-label",
+        "label": "Guest CTA Label",
+        "value": "Sign in"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "guest-cta-href",
+        "label": "Guest CTA Href",
+        "value": "/customer/login"
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "rows-limit",
+        "label": "Rows Limit",
+        "value": 3,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 5
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-sparkline",
+        "label": "Show Sparkline",
+        "value": true
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "order-window-days",
+        "label": "Order Window Days",
+        "value": 90,
+        "validation": {
+          "numberMin": 30,
+          "numberMax": 365
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "trend-points",
+        "label": "Trend Points",
+        "value": 12,
+        "validation": {
+          "numberMin": 6,
+          "numberMax": 24
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-finance-section",
+        "label": "Show Finance Section",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-operations-section",
+        "label": "Show Operations Section",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-sourcing-section",
+        "label": "Show Sourcing Section",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-charts",
+        "label": "Show Charts",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-last-updated",
+        "label": "Show Last Updated",
+        "value": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "refresh-label",
+        "label": "Refresh Label",
+        "value": "Refresh data"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "premium-accent",
+        "label": "Premium Accent",
+        "value": "emerald",
+        "options": [
+          {
+            "name": "Emerald",
+            "value": "emerald"
+          },
+          {
+            "name": "Cyan",
+            "value": "cyan"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "premium-surface",
+        "label": "Premium Surface",
+        "value": "glass",
+        "options": [
+          {
+            "name": "Glass",
+            "value": "glass"
+          },
+          {
+            "name": "Solid",
+            "value": "solid"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "premium-style",
+        "label": "Premium Style",
+        "value": "classic",
+        "options": [
+          {
+            "name": "Classic",
+            "value": "classic"
+          },
+          {
+            "name": "Editorial Luxe",
+            "value": "editorial-luxe"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "premium-motion",
+        "label": "Premium Motion",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "live-block",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": "Live Commerce Dashboard"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "guest-cta-label",
+        "label": "Guest CTA Label",
+        "value": "Sign in"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "guest-cta-href",
+        "label": "Guest CTA Href",
+        "value": "/customer/login"
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "rows-limit",
+        "label": "Rows Limit",
+        "value": 3,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 5
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-sparkline",
+        "label": "Show Sparkline",
+        "value": true
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "order-window-days",
+        "label": "Order Window Days",
+        "value": 90,
+        "validation": {
+          "numberMin": 30,
+          "numberMax": 365
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "trend-points",
+        "label": "Trend Points",
+        "value": 12,
+        "validation": {
+          "numberMin": 6,
+          "numberMax": 24
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-finance-section",
+        "label": "Show Finance Section",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-operations-section",
+        "label": "Show Operations Section",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-sourcing-section",
+        "label": "Show Sourcing Section",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-charts",
+        "label": "Show Charts",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-last-updated",
+        "label": "Show Last Updated",
+        "value": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "refresh-label",
+        "label": "Refresh Label",
+        "value": "Refresh data"
       }
     ]
   },
@@ -1722,6 +2022,32 @@
     ]
   },
   {
+    "id": "product-teaser",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sku",
+        "label": "Product SKU",
+        "required": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "details-button",
+        "label": "Show Details Button",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "cart-button",
+        "label": "Show Add to Cart Button",
+        "value": true
+      }
+    ]
+  },
+  {
     "id": "promotional-hero",
     "fields": []
   },
@@ -1773,6 +2099,56 @@
         "valueType": "string",
         "name": "attribution",
         "label": "Attribution"
+      }
+    ]
+  },
+  {
+    "id": "search-bar",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "placeholder",
+        "value": "Search Products",
+        "label": "Placeholder Text",
+        "description": "The placeholder text shown in the search input",
+        "required": false
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "alignment",
+        "value": "center",
+        "label": "Alignment",
+        "description": "Horizontal alignment of the search bar",
+        "required": false,
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "resultCount",
+        "value": 8,
+        "label": "Results Count",
+        "description": "Number of products to show in search results",
+        "required": false,
+        "validation": {
+          "numberMin": 2,
+          "numberMax": 20
+        }
       }
     ]
   },
@@ -2286,6 +2662,366 @@
         "valueType": "string",
         "name": "videoUrlText",
         "label": "Video URL Text"
+      }
+    ]
+  },
+  {
+    "id": "vip-hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media_image",
+        "label": "media_image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "media_imageAlt",
+        "label": "media_imageAlt"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_eyebrow",
+        "label": "qualified_eyebrow",
+        "value": "VIP Winter Access"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_headline",
+        "label": "qualified_headline",
+        "value": "VIP Members Unlock Preferred Pricing on Winter Gear"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "qualified_body",
+        "label": "qualified_body"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_ctaHref",
+        "label": "qualified_ctaHref"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_ctaText",
+        "label": "qualified_ctaText",
+        "value": "Shop Winter Gear"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_secondaryCtaHref",
+        "label": "qualified_secondaryCtaHref"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_secondaryCtaText",
+        "label": "qualified_secondaryCtaText"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_proof1",
+        "label": "qualified_proof1",
+        "value": "Member savings"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_proof2",
+        "label": "qualified_proof2",
+        "value": "Free store pickup"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "qualified_proof3",
+        "label": "qualified_proof3",
+        "value": "Offer applies automatically"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "qualified_disclaimer",
+        "label": "qualified_disclaimer"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_eyebrow",
+        "label": "anonymous_eyebrow",
+        "value": "Winter Gear Access"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_headline",
+        "label": "anonymous_headline",
+        "value": "Sign in to check VIP member offers on winter gear"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "anonymous_body",
+        "label": "anonymous_body"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_ctaHref",
+        "label": "anonymous_ctaHref"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_ctaText",
+        "label": "anonymous_ctaText",
+        "value": "Sign in"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_secondaryCtaHref",
+        "label": "anonymous_secondaryCtaHref"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_secondaryCtaText",
+        "label": "anonymous_secondaryCtaText"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_proof1",
+        "label": "anonymous_proof1",
+        "value": "Member savings"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_proof2",
+        "label": "anonymous_proof2",
+        "value": "Free store pickup"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anonymous_proof3",
+        "label": "anonymous_proof3",
+        "value": "Pricing confirmed in cart"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "anonymous_disclaimer",
+        "label": "anonymous_disclaimer"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_eyebrow",
+        "label": "fallback_eyebrow",
+        "value": "Winter Gear Season"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_headline",
+        "label": "fallback_headline",
+        "value": "Winter gear is ready for your next trip"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "fallback_body",
+        "label": "fallback_body"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_ctaHref",
+        "label": "fallback_ctaHref"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_ctaText",
+        "label": "fallback_ctaText",
+        "value": "Shop Winter Gear"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_secondaryCtaHref",
+        "label": "fallback_secondaryCtaHref"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_secondaryCtaText",
+        "label": "fallback_secondaryCtaText"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_proof1",
+        "label": "fallback_proof1",
+        "value": "Member savings"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_proof2",
+        "label": "fallback_proof2",
+        "value": "Free store pickup"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fallback_proof3",
+        "label": "fallback_proof3",
+        "value": "Seasonal assortments"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "fallback_disclaimer",
+        "label": "fallback_disclaimer"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pending_eyebrow",
+        "label": "pending_eyebrow",
+        "value": "Checking access"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pending_headline",
+        "label": "pending_headline",
+        "value": "Confirming your winter gear experience"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "pending_body",
+        "label": "pending_body"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "pending_disclaimer",
+        "label": "pending_disclaimer"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "audienceKey",
+        "label": "audienceKey"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "promoRuleId",
+        "label": "promoRuleId"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "fallbackMode",
+        "label": "fallbackMode",
+        "value": "seasonal",
+        "options": [
+          {
+            "name": "seasonal",
+            "value": "seasonal"
+          },
+          {
+            "name": "hide",
+            "value": "hide"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "classes",
+        "value": "vip-winter split-left with-proof-bar",
+        "options": [
+          {
+            "name": "vip-winter split-left with-proof-bar",
+            "value": "vip-winter split-left with-proof-bar"
+          },
+          {
+            "name": "vip-winter overlay-right with-proof-bar",
+            "value": "vip-winter overlay-right with-proof-bar"
+          },
+          {
+            "name": "vip-winter split-left",
+            "value": "vip-winter split-left"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vip-member-block-real-v2",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow-text",
+        "label": "Eyebrow Text",
+        "value": "Private Member Offers - Q1 2025"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle",
+        "value": "Member-only pricing, first-access inventory, and concierge procurement - built for enterprise IT operations."
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "rows-limit",
+        "label": "Rows Limit",
+        "value": 3,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 5
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "guest-cta-label",
+        "label": "Guest CTA Label",
+        "value": "Sign in"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "guest-cta-href",
+        "label": "Guest CTA Href",
+        "value": "/customer/login"
       }
     ]
   }

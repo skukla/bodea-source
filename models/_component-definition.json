@@ -66,6 +66,9 @@
           "...": "../blocks/circle-carousel/_*.json#/definitions"
         },
         {
+          "...": "../blocks/customer-segment-personalization-block/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/embed/_*.json#/definitions"
         },
         {
@@ -87,6 +90,12 @@
           "...": "../blocks/how-it-works-stats/_*.json#/definitions"
         },
         {
+          "...": "../blocks/live-block/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/live-block-premium/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/newsletter/_*.json#/definitions"
         },
         {
@@ -100,6 +109,9 @@
         },
         {
           "...": "../blocks/search/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/search-bar/_*.json#/definitions"
         },
         {
           "...": "../blocks/store-locator/_*.json#/definitions"
@@ -118,6 +130,12 @@
         },
         {
           "...": "../blocks/video/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/vip-hero/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/vip-member-block-real-v2/_*.json#/definitions"
         },
         {
           "...": "../blocks/commerce-*/_*.json#/definitions"

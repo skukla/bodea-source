@@ -348,6 +348,16 @@
           }
         },
         {
+          "title": "Customer Segment Personalization Block",
+          "id": "customer-segment-personalization-block",
+          "model": "customer-segment-personalization-block",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
           "title": "Embed",
           "id": "embed",
           "model": "embed",
@@ -674,6 +684,26 @@
           }
         },
         {
+          "title": "Live Block",
+          "id": "live-block",
+          "model": "live-block",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Live Block Premium",
+          "id": "live-block-premium",
+          "model": "live-block-premium",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
           "title": "Newsletter",
           "id": "newsletter",
           "plugins": {
@@ -747,6 +777,18 @@
                   "selector": "div>div>p>a"
                 }
               ]
+            }
+          }
+        },
+        {
+          "title": "Search Bar",
+          "id": "search-bar",
+          "plugins": {
+            "da": {
+              "name": "search-bar",
+              "rows": 3,
+              "columns": 1,
+              "behaviour": "columns"
             }
           }
         },
@@ -894,6 +936,26 @@
                   "selector": "div>div>p>a"
                 }
               ]
+            }
+          }
+        },
+        {
+          "title": "VIP Hero",
+          "id": "vip-hero",
+          "model": "vip-hero",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "VIP Member Block Real V2",
+          "id": "vip-member-block-real-v2",
+          "model": "vip-member-block-real-v2",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -1240,6 +1302,16 @@
           "title": "Product Recommendations",
           "id": "product-recommendations",
           "model": "product-recommendations",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Product Teaser",
+          "id": "product-teaser",
+          "model": "product-teaser",
           "plugins": {
             "da": {
               "type": "key-value-block"

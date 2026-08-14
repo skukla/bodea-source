@@ -1,0 +1,57 @@
+{
+  "definitions": [
+    {
+      "title": "Form",
+      "id": "form",
+      "model": "form",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 1,
+          "fields": [
+            { "name": "formUrl", "selector": "div:nth-child(1)>div>p>a[href]" },
+            { "name": "formUrlText", "selector": "div:nth-child(1)>div>p>a" },
+            { "name": "submitUrl", "selector": "div:nth-child(2)>div>p>a[href]" },
+            { "name": "submitUrlText", "selector": "div:nth-child(2)>div>p>a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "form",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "formUrl",
+          "label": "Form Definition URL",
+          "description": "Paste a form JSON URL, or a DA sheet link (https://da.live/sheet#/...)",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "formUrlText",
+          "label": "Form Data URL Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "submitUrl",
+          "label": "Submit URL",
+          "description": "Webhook/API endpoint that receives form submissions (JSON POST)",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "submitUrlText",
+          "label": "Submit URL Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

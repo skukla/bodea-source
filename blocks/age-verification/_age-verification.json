@@ -1,0 +1,51 @@
+{
+  "definitions": [
+    {
+      "title": "Age Verification",
+      "id": "age-verification",
+      "model": "age-verification",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "age-verification",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "value": "Are you 18 or older?"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "yes-text",
+          "label": "Yes Button Text",
+          "value": "Yes"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "no-text",
+          "label": "No Button Text",
+          "value": "No"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "redirect-url",
+          "label": "Redirect URL (on No)",
+          "description": "Where to send users who are underage",
+          "value": "https://www.google.com"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

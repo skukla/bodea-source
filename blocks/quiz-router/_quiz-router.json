@@ -1,0 +1,58 @@
+{
+  "definitions": [
+    {
+      "title": "Quiz Router",
+      "id": "quiz-router",
+      "model": "quiz-router",
+      "filter": "quiz-router",
+      "plugins": {
+        "da": {
+          "name": "quiz-router",
+          "rows": 1,
+          "columns": 3
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "quiz-router",
+      "fields": [
+        {
+          "component": "select",
+          "name": "rowType",
+          "label": "Row Type",
+          "description": "Use question to start a step, then add option rows below it.",
+          "options": [
+            {
+              "name": "Question",
+              "value": "question"
+            },
+            {
+              "name": "Option",
+              "value": "option"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "label",
+          "label": "Question Text or Option Label",
+          "description": "For options, Label|URL is supported as a shorthand."
+        },
+        {
+          "component": "text",
+          "name": "url",
+          "label": "Destination URL (Options: #next or /path)",
+          "description": "Use #next or leave empty to advance; same-origin URLs route immediately."
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "quiz-router",
+      "components": []
+    }
+  ]
+}

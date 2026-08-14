@@ -1,0 +1,91 @@
+{
+  "definitions": [
+    {
+      "title": "Age Gate",
+      "id": "age-gate",
+      "model": "age-gate",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "age-gate",
+      "fields": [
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "data-min-age",
+          "label": "Minimum Age",
+          "description": "Minimum age required to pass the gate",
+          "value": 18,
+          "validation": {
+            "numberMin": 1,
+            "numberMax": 99
+          }
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "data-storage-duration",
+          "label": "Storage Duration (Days)",
+          "description": "How many days to remember the decision",
+          "value": 30
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-title",
+          "label": "Title",
+          "value": "Age Verification"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-message",
+          "label": "Message",
+          "value": "Please enter your date of birth to continue."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-month-placeholder",
+          "label": "Month Placeholder",
+          "value": "MM"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-day-placeholder",
+          "label": "Day Placeholder",
+          "value": "DD"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-year-placeholder",
+          "label": "Year Placeholder",
+          "value": "YYYY"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-button-text",
+          "label": "Button Text",
+          "value": "Submit"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-error-message",
+          "label": "Error Message",
+          "value": "You must be at least 18 years old to view this content."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

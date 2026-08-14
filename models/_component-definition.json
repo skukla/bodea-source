@@ -51,6 +51,75 @@
           "...": "../blocks/targeted-block/_*.json#/definitions"
         },
         {
+          "...": "../blocks/age-gate/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/age-verification/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/blog-post/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/catalog-highlights/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/circle-carousel/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/embed/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero-3/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero-5/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero-6/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/hero-cta/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/how-it-works-stats/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/newsletter/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/promotional-hero/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/quiz-router/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/quote/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/search/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/store-locator/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/table/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/tabs/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/top-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/triptych/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/video/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/commerce-*/_*.json#/definitions"
         }
       ]

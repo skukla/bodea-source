@@ -272,6 +272,632 @@
           }
         },
         {
+          "title": "Age Gate",
+          "id": "age-gate",
+          "model": "age-gate",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Age Verification",
+          "id": "age-verification",
+          "model": "age-verification",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Blog Post",
+          "id": "blog-post",
+          "plugins": {
+            "da": {
+              "name": "blog-post",
+              "rows": 1,
+              "columns": 1
+            }
+          },
+          "model": "blog-post"
+        },
+        {
+          "title": "Catalog Highlights",
+          "id": "catalog-highlights",
+          "model": "catalog-highlights",
+          "plugins": {
+            "da": {
+              "name": "catalog-highlights",
+              "rows": 1,
+              "columns": 8
+            }
+          }
+        },
+        {
+          "title": "Circle Carousel",
+          "id": "circle-carousel",
+          "plugins": {
+            "da": {
+              "name": "circle-carousel",
+              "rows": 8,
+              "columns": 2,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
+          "title": "Circle Carousel Item",
+          "id": "circle-carousel-item",
+          "plugins": {
+            "da": {
+              "name": "circle-carousel-item",
+              "behaviour": "columns-row"
+            }
+          }
+        },
+        {
+          "title": "Circle Carousel Cell",
+          "id": "circle-carousel-cell",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "Embed",
+          "id": "embed",
+          "model": "embed",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "poster",
+                  "selector": "div>div>picture>img[src]"
+                },
+                {
+                  "name": "posterAlt",
+                  "selector": "div>div>picture>img[alt]"
+                },
+                {
+                  "name": "embedUrl",
+                  "selector": "div>div>p>a[href]"
+                },
+                {
+                  "name": "embedUrlText",
+                  "selector": "div>div>p>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Form",
+          "id": "form",
+          "model": "form",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "formUrl",
+                  "selector": "div:nth-child(1)>div>p>a[href]"
+                },
+                {
+                  "name": "formUrlText",
+                  "selector": "div:nth-child(1)>div>p>a"
+                },
+                {
+                  "name": "submitUrl",
+                  "selector": "div:nth-child(2)>div>p>a[href]"
+                },
+                {
+                  "name": "submitUrlText",
+                  "selector": "div:nth-child(2)>div>p>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero 3",
+          "id": "hero-3",
+          "model": "hero-3",
+          "plugins": {
+            "da": {
+              "rows": 9,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "urgency",
+                  "selector": "div:nth-child(1)>div:nth-child(1)"
+                },
+                {
+                  "name": "eyebrow",
+                  "selector": "div:nth-child(1)>div:nth-child(2)"
+                },
+                {
+                  "name": "headline",
+                  "selector": "div:nth-child(2)>div:nth-child(1)"
+                },
+                {
+                  "name": "subcopy",
+                  "selector": "div:nth-child(3)>div:nth-child(1)"
+                },
+                {
+                  "name": "cta",
+                  "selector": "div:nth-child(4)>div:nth-child(1)"
+                },
+                {
+                  "name": "trust",
+                  "selector": "div:nth-child(5)>div:nth-child(1)"
+                },
+                {
+                  "name": "badges",
+                  "selector": "div:nth-child(6)>div:nth-child(1)"
+                },
+                {
+                  "name": "mainImage",
+                  "selector": "div:nth-child(7)>div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "railText",
+                  "selector": "div:nth-child(7)>div:nth-child(2)"
+                },
+                {
+                  "name": "accent1Image",
+                  "selector": "div:nth-child(8)>div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "accent1Label",
+                  "selector": "div:nth-child(8)>div:nth-child(2)"
+                },
+                {
+                  "name": "accent2Image",
+                  "selector": "div:nth-child(9)>div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "accent2Label",
+                  "selector": "div:nth-child(9)>div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero 5",
+          "id": "hero-5",
+          "model": "hero-5",
+          "plugins": {
+            "da": {
+              "rows": 15,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "selector": "div:nth-child(1)>div:nth-child(1)"
+                },
+                {
+                  "name": "title",
+                  "selector": "div:nth-child(2)>div:nth-child(1)"
+                },
+                {
+                  "name": "subtitle",
+                  "selector": "div:nth-child(3)>div:nth-child(1)"
+                },
+                {
+                  "name": "ctaPrimary",
+                  "selector": "div:nth-child(4)>div:nth-child(1)>a"
+                },
+                {
+                  "name": "ctaSecondary",
+                  "selector": "div:nth-child(5)>div:nth-child(1)>a"
+                },
+                {
+                  "name": "trustText",
+                  "selector": "div:nth-child(6)>div:nth-child(1)"
+                },
+                {
+                  "name": "badgeValue",
+                  "selector": "div:nth-child(7)>div:nth-child(1)"
+                },
+                {
+                  "name": "badgeLabel",
+                  "selector": "div:nth-child(8)>div:nth-child(1)"
+                },
+                {
+                  "name": "metric1",
+                  "selector": "div:nth-child(9)>div:nth-child(1)"
+                },
+                {
+                  "name": "metric2",
+                  "selector": "div:nth-child(10)>div:nth-child(1)"
+                },
+                {
+                  "name": "metric3",
+                  "selector": "div:nth-child(11)>div:nth-child(1)"
+                },
+                {
+                  "name": "order1",
+                  "selector": "div:nth-child(12)>div:nth-child(1)"
+                },
+                {
+                  "name": "order2",
+                  "selector": "div:nth-child(13)>div:nth-child(1)"
+                },
+                {
+                  "name": "order3",
+                  "selector": "div:nth-child(14)>div:nth-child(1)"
+                },
+                {
+                  "name": "notice",
+                  "selector": "div:nth-child(15)>div:nth-child(1)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero 6",
+          "id": "hero-6",
+          "model": "hero-6",
+          "plugins": {
+            "da": {
+              "type": "key-value-block",
+              "rows": 11,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "selector": "div:nth-child(1)>div:nth-child(1)"
+                },
+                {
+                  "name": "title",
+                  "selector": "div:nth-child(2)>div:nth-child(1)"
+                },
+                {
+                  "name": "subtitle",
+                  "selector": "div:nth-child(3)>div:nth-child(1)"
+                },
+                {
+                  "name": "ctaPrimary",
+                  "selector": "div:nth-child(4)>div:nth-child(1)>a"
+                },
+                {
+                  "name": "ctaSecondary",
+                  "selector": "div:nth-child(5)>div:nth-child(1)>a"
+                },
+                {
+                  "name": "stat1",
+                  "selector": "div:nth-child(6)>div:nth-child(1)"
+                },
+                {
+                  "name": "stat2",
+                  "selector": "div:nth-child(7)>div:nth-child(1)"
+                },
+                {
+                  "name": "stat3",
+                  "selector": "div:nth-child(8)>div:nth-child(1)"
+                },
+                {
+                  "name": "feature1",
+                  "selector": "div:nth-child(9)>div:nth-child(1)"
+                },
+                {
+                  "name": "feature2",
+                  "selector": "div:nth-child(10)>div:nth-child(1)"
+                },
+                {
+                  "name": "feature3",
+                  "selector": "div:nth-child(11)>div:nth-child(1)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero CTA",
+          "id": "hero-cta",
+          "plugins": {
+            "da": {
+              "name": "hero-cta",
+              "rows": 8,
+              "columns": 4
+            }
+          }
+        },
+        {
+          "title": "How It Works + Stats",
+          "id": "how-it-works-stats",
+          "model": "how-it-works-stats",
+          "plugins": {
+            "da": {
+              "rows": 12,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "tag",
+                  "selector": "div:nth-child(1)>div:nth-child(1)"
+                },
+                {
+                  "name": "title",
+                  "selector": "div:nth-child(2)>div:nth-child(1)"
+                },
+                {
+                  "name": "step1",
+                  "selector": "div:nth-child(3)>div:nth-child(1)"
+                },
+                {
+                  "name": "step2",
+                  "selector": "div:nth-child(4)>div:nth-child(1)"
+                },
+                {
+                  "name": "step3",
+                  "selector": "div:nth-child(5)>div:nth-child(1)"
+                },
+                {
+                  "name": "step4",
+                  "selector": "div:nth-child(6)>div:nth-child(1)"
+                },
+                {
+                  "name": "stat1",
+                  "selector": "div:nth-child(7)>div:nth-child(1)"
+                },
+                {
+                  "name": "stat2",
+                  "selector": "div:nth-child(8)>div:nth-child(1)"
+                },
+                {
+                  "name": "stat3",
+                  "selector": "div:nth-child(9)>div:nth-child(1)"
+                },
+                {
+                  "name": "stat4",
+                  "selector": "div:nth-child(10)>div:nth-child(1)"
+                },
+                {
+                  "name": "buttonPrimary",
+                  "selector": "div:nth-child(11)>div:nth-child(1)>a"
+                },
+                {
+                  "name": "buttonSecondary",
+                  "selector": "div:nth-child(12)>div:nth-child(1)>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Newsletter",
+          "id": "newsletter",
+          "plugins": {
+            "da": {
+              "name": "newsletter",
+              "rows": 8,
+              "columns": 1
+            }
+          }
+        },
+        {
+          "title": "Promotional Hero",
+          "id": "promotional-hero",
+          "plugins": {
+            "da": {
+              "name": "promotional-hero",
+              "rows": 3,
+              "columns": 3
+            }
+          }
+        },
+        {
+          "title": "Quiz Router",
+          "id": "quiz-router",
+          "model": "quiz-router",
+          "filter": "quiz-router",
+          "plugins": {
+            "da": {
+              "name": "quiz-router",
+              "rows": 1,
+              "columns": 3
+            }
+          }
+        },
+        {
+          "title": "Quote",
+          "id": "quote",
+          "model": "quote",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "quotation",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "attribution",
+                  "selector": "div:nth-child(2)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Search",
+          "id": "search",
+          "model": "search",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "source",
+                  "selector": "div>div>p>a[href]"
+                },
+                {
+                  "name": "sourceText",
+                  "selector": "div>div>p>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Store Locator",
+          "id": "store-locator",
+          "plugins": {
+            "da": {
+              "name": "store-locator",
+              "rows": 20,
+              "columns": 6,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
+          "title": "Store Locator Item",
+          "id": "store-locator-item",
+          "plugins": {
+            "da": {
+              "name": "store-locator-item",
+              "behaviour": "columns-row"
+            }
+          }
+        },
+        {
+          "title": "Store Locator Cell",
+          "id": "store-locator-cell",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "Table",
+          "id": "table",
+          "model": "table",
+          "filter": "table",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 3,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
+          "title": "Table Row",
+          "id": "table-row",
+          "plugins": {
+            "da": {
+              "behaviour": "columns-row"
+            }
+          }
+        },
+        {
+          "title": "Table Cell",
+          "id": "table-cell",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "Tabs",
+          "id": "tabs",
+          "model": "tabs",
+          "filter": "tabs",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Tab Item",
+          "id": "tab-item",
+          "model": "tab-item",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "label",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "content",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Top Banner",
+          "id": "top-banner",
+          "plugins": {
+            "da": {
+              "name": "top-banner",
+              "rows": 8,
+              "columns": 4
+            }
+          }
+        },
+        {
+          "title": "Triptych",
+          "id": "triptych",
+          "model": "triptych",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Video",
+          "id": "video",
+          "model": "video",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "poster",
+                  "selector": "div>div>picture>img[src]"
+                },
+                {
+                  "name": "posterAlt",
+                  "selector": "div>div>picture>img[alt]"
+                },
+                {
+                  "name": "videoUrl",
+                  "selector": "div>div>p>a[href]"
+                },
+                {
+                  "name": "videoUrlText",
+                  "selector": "div>div>p>a"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Commerce Account Header",
           "id": "commerce-account-header",
           "model": "commerce-account-header",
@@ -585,6 +1211,18 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Product Highlights",
+          "id": "product-highlights",
+          "model": "product-highlights",
+          "plugins": {
+            "da": {
+              "name": "product-highlights",
+              "rows": 4,
+              "columns": 2
             }
           }
         },

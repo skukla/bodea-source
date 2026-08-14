@@ -180,6 +180,219 @@
     ]
   },
   {
+    "id": "age-gate",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "data-min-age",
+        "label": "Minimum Age",
+        "description": "Minimum age required to pass the gate",
+        "value": 18,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 99
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "data-storage-duration",
+        "label": "Storage Duration (Days)",
+        "description": "How many days to remember the decision",
+        "value": 30
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-title",
+        "label": "Title",
+        "value": "Age Verification"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-message",
+        "label": "Message",
+        "value": "Please enter your date of birth to continue."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-month-placeholder",
+        "label": "Month Placeholder",
+        "value": "MM"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-day-placeholder",
+        "label": "Day Placeholder",
+        "value": "DD"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-year-placeholder",
+        "label": "Year Placeholder",
+        "value": "YYYY"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-button-text",
+        "label": "Button Text",
+        "value": "Submit"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-error-message",
+        "label": "Error Message",
+        "value": "You must be at least 18 years old to view this content."
+      }
+    ]
+  },
+  {
+    "id": "age-verification",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": "Are you 18 or older?"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "yes-text",
+        "label": "Yes Button Text",
+        "value": "Yes"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "no-text",
+        "label": "No Button Text",
+        "value": "No"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "redirect-url",
+        "label": "Redirect URL (on No)",
+        "description": "Where to send users who are underage",
+        "value": "https://www.google.com"
+      }
+    ]
+  },
+  {
+    "id": "blog-post",
+    "fields": [
+      {
+        "component": "select",
+        "name": "blogpost-layout",
+        "label": "Layout",
+        "options": [
+          {
+            "name": "Classic",
+            "value": "classic"
+          },
+          {
+            "name": "Centered",
+            "value": "centered"
+          },
+          {
+            "name": "Magazine",
+            "value": "magazine"
+          },
+          {
+            "name": "Split Cover",
+            "value": "splitcover"
+          }
+        ],
+        "value": "classic"
+      },
+      {
+        "component": "select",
+        "name": "blogpost-style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Editorial",
+            "value": "editorial"
+          },
+          {
+            "name": "Minimal",
+            "value": "minimal"
+          }
+        ],
+        "value": "editorial"
+      },
+      {
+        "component": "select",
+        "name": "blogpost-width",
+        "label": "Width",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Wide",
+            "value": "wide"
+          }
+        ],
+        "value": "default"
+      },
+      {
+        "component": "boolean",
+        "name": "blogpost-showhero",
+        "label": "Show Hero Image",
+        "value": true
+      },
+      {
+        "component": "select",
+        "name": "blogpost-heroratio",
+        "label": "Hero Ratio",
+        "options": [
+          {
+            "name": "Wide (16:9)",
+            "value": "wide"
+          },
+          {
+            "name": "Landscape (4:3)",
+            "value": "landscape"
+          },
+          {
+            "name": "Square (1:1)",
+            "value": "square"
+          }
+        ],
+        "value": "wide"
+      },
+      {
+        "component": "boolean",
+        "name": "blogpost-showdescription",
+        "label": "Show Description",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "name": "blogpost-showmeta",
+        "label": "Show Author & Date",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "name": "blogpost-showtoc",
+        "label": "Show Table of Contents",
+        "value": true
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -226,6 +439,86 @@
         "name": "text",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "catalog-highlights",
+    "fields": []
+  },
+  {
+    "id": "circle-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "alignment",
+        "label": "Alignment",
+        "description": "Horizontal alignment of the carousel",
+        "value": "center",
+        "required": false,
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autoplay",
+        "label": "Enable Autoplay",
+        "description": "Automatically cycle through items every 4 seconds",
+        "value": true,
+        "required": false
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "itemsMobile",
+        "label": "Items Per View (Mobile)",
+        "description": "Number of circles visible on mobile screens",
+        "value": 2,
+        "required": false,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 4
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "itemsTablet",
+        "label": "Items Per View (Tablet)",
+        "description": "Number of circles visible on tablet screens",
+        "value": 4,
+        "required": false,
+        "validation": {
+          "numberMin": 2,
+          "numberMax": 6
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "itemsDesktop",
+        "label": "Items Per View (Desktop)",
+        "description": "Number of circles visible on desktop screens",
+        "value": 6,
+        "required": false,
+        "validation": {
+          "numberMin": 3,
+          "numberMax": 8
+        }
       }
     ]
   },
@@ -381,6 +674,37 @@
     ]
   },
   {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "poster",
+        "label": "Poster Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "posterAlt",
+        "label": "Poster Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "embedUrl",
+        "label": "Embed URL",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "embedUrlText",
+        "label": "Embed URL Text"
+      }
+    ]
+  },
+  {
     "id": "enrichment",
     "fields": [
       {
@@ -406,6 +730,39 @@
     ]
   },
   {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "formUrl",
+        "label": "Form Definition URL",
+        "description": "Paste a form JSON URL, or a DA sheet link (https://da.live/sheet#/...)",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "formUrlText",
+        "label": "Form Data URL Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "submitUrl",
+        "label": "Submit URL",
+        "description": "Webhook/API endpoint that receives form submissions (JSON POST)",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "submitUrlText",
+        "label": "Submit URL Text"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -420,6 +777,287 @@
         "label": "Fragment URL Text"
       }
     ]
+  },
+  {
+    "id": "hero-3",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "urgency",
+        "label": "Urgency Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "headline",
+        "label": "Headline (paragraphs; em=italic, strong=indent)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subcopy",
+        "label": "Subcopy",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Buttons (links)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "trust",
+        "label": "Trust Items (list with icon prefix)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "badges",
+        "label": "Badges (list with icon prefix)"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mainImage",
+        "label": "Main Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "railText",
+        "label": "Vertical Rail Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "accent1Image",
+        "label": "Accent Card 1 Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "accent1Label",
+        "label": "Accent Card 1 Label",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "accent2Image",
+        "label": "Accent Card 2 Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "accent2Label",
+        "label": "Accent Card 2 Label",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "hero-5",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title (supports strong/del)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "ctaPrimary",
+        "label": "Primary CTA Link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "ctaSecondary",
+        "label": "Secondary CTA Link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "trustText",
+        "label": "Trust Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "badgeValue",
+        "label": "Badge Value",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "badgeLabel",
+        "label": "Badge Label",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "metric1",
+        "label": "Metric 1 (value | label | delta)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "metric2",
+        "label": "Metric 2 (value | label | delta)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "metric3",
+        "label": "Metric 3 (value | label | delta)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "order1",
+        "label": "Order 1 (name | sub-label | amount)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "order2",
+        "label": "Order 2 (name | sub-label | amount)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "order3",
+        "label": "Order 3 (name | sub-label | amount)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "notice",
+        "label": "Floating Notice",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "hero-6",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Label",
+        "value": "Enterprise Platform"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Headline (bold → green accent, italic → outline)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle / Description",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "ctaPrimary",
+        "label": "Primary CTA Link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "ctaSecondary",
+        "label": "Secondary CTA Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat1",
+        "label": "Stat 1 (value | label | note)",
+        "value": "$4.2B | GMV Processed | +38% YoY"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat2",
+        "label": "Stat 2 (value | label | note)",
+        "value": "99.98% | Uptime SLA | Past 12 months"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat3",
+        "label": "Stat 3 (value | label | note)",
+        "value": "8,400+ | Enterprise Clients | 60 countries"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "feature1",
+        "label": "Feature 1 (emoji | title | description)",
+        "value": "⚡ | Blazing Performance | Sub-100ms global edge delivery at any scale"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "feature2",
+        "label": "Feature 2 (emoji | title | description)",
+        "value": "🔒 | Enterprise Security | SOC 2 Type II, ISO 27001, PCI DSS compliant"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "feature3",
+        "label": "Feature 3 (emoji | title | description)",
+        "value": "🌐 | Global Reach | Deployed across 200+ PoPs in 90 countries"
+      }
+    ]
+  },
+  {
+    "id": "hero-cta",
+    "fields": []
   },
   {
     "id": "hero",
@@ -448,6 +1086,593 @@
     ]
   },
   {
+    "id": "how-it-works-stats",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tag",
+        "label": "Section Tag",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "step1",
+        "label": "Step 1 (icon | title | description)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "step2",
+        "label": "Step 2 (icon | title | description)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "step3",
+        "label": "Step 3 (icon | title | description)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "step4",
+        "label": "Step 4 (icon | title | description)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat1",
+        "label": "Stat 1 (value | label)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat2",
+        "label": "Stat 2 (value | label)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat3",
+        "label": "Stat 3 (value | label)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stat4",
+        "label": "Stat 4 (value | label)",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "buttonPrimary",
+        "label": "Primary Button Link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "buttonSecondary",
+        "label": "Secondary Button Link"
+      }
+    ]
+  },
+  {
+    "id": "newsletter",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "align",
+        "label": "Content Alignment",
+        "description": "Horizontal alignment for the text and form",
+        "value": "center",
+        "required": false,
+        "options": [
+          {
+            "name": "Start (logical)",
+            "value": "start"
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          },
+          {
+            "name": "End (logical)",
+            "value": "end"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "backgroundColor",
+        "label": "Background Color",
+        "description": "Use a named variant or override with Section Metadata for custom hex",
+        "value": "neutral",
+        "required": false,
+        "options": [
+          {
+            "name": "Neutral",
+            "value": "neutral"
+          },
+          {
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Brand",
+            "value": "brand"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Accent",
+            "value": "accent"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "backgroundStyle",
+        "label": "Background Style",
+        "description": "Visual treatment layered on top of background color",
+        "value": "solid",
+        "required": false,
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Subtle Gradient",
+            "value": "subtle-gradient"
+          },
+          {
+            "name": "Mesh Gradient",
+            "value": "mesh-gradient"
+          },
+          {
+            "name": "Noise Texture",
+            "value": "noise-texture"
+          },
+          {
+            "name": "Split Tone",
+            "value": "split-tone"
+          },
+          {
+            "name": "Radial Glow",
+            "value": "radial-glow"
+          },
+          {
+            "name": "Duotone",
+            "value": "duotone"
+          },
+          {
+            "name": "Top Glow",
+            "value": "top-glow"
+          },
+          {
+            "name": "Bottom Fade",
+            "value": "bottom-fade"
+          },
+          {
+            "name": "Diagonal Sweep",
+            "value": "diagonal-sweep"
+          },
+          {
+            "name": "Grid Fade",
+            "value": "grid-fade"
+          },
+          {
+            "name": "Image Wash",
+            "value": "image-wash"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "backgroundImage",
+        "label": "Background Image URL",
+        "description": "Used when Background Style is Image Wash",
+        "value": "",
+        "required": false
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "buttonStyle",
+        "label": "Button Style",
+        "description": "Corner style for the sign up button",
+        "value": "default",
+        "required": false,
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Pill",
+            "value": "pill"
+          },
+          {
+            "name": "Sharp",
+            "value": "sharp"
+          },
+          {
+            "name": "Soft",
+            "value": "soft"
+          },
+          {
+            "name": "Rounded Large",
+            "value": "rounded-lg"
+          },
+          {
+            "name": "Outline",
+            "value": "outline"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "Elevated",
+            "value": "elevated"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "buttonWidth",
+        "label": "Button Width",
+        "description": "Width preset for the sign up button",
+        "value": "medium",
+        "required": false,
+        "options": [
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Narrow",
+            "value": "narrow"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Wide",
+            "value": "wide"
+          },
+          {
+            "name": "Fluid",
+            "value": "fluid"
+          },
+          {
+            "name": "Fit Content",
+            "value": "fit-content"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "density",
+        "label": "Spacing Density",
+        "description": "Adjust vertical rhythm and control height",
+        "value": "comfortable",
+        "required": false,
+        "options": [
+          {
+            "name": "XX-Compact",
+            "value": "xx-compact"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
+          },
+          {
+            "name": "X-Compact",
+            "value": "x-compact"
+          },
+          {
+            "name": "Comfortable",
+            "value": "comfortable"
+          },
+          {
+            "name": "Spacious",
+            "value": "spacious"
+          },
+          {
+            "name": "X-Spacious",
+            "value": "x-spacious"
+          },
+          {
+            "name": "XX-Spacious",
+            "value": "xx-spacious"
+          },
+          {
+            "name": "Responsive",
+            "value": "responsive"
+          },
+          {
+            "name": "Adaptive",
+            "value": "adaptive"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "formGap",
+        "label": "Form Gap",
+        "description": "Horizontal gap between email field and button",
+        "value": "auto",
+        "required": false,
+        "options": [
+          {
+            "name": "Auto (from Density)",
+            "value": "auto"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "XX-Small",
+            "value": "xxsmall"
+          },
+          {
+            "name": "X-Small",
+            "value": "xsmall"
+          },
+          {
+            "name": "Small",
+            "value": "small"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "X-Large",
+            "value": "xlarge"
+          },
+          {
+            "name": "XX-Large",
+            "value": "xxlarge"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "emailStyle",
+        "label": "Email Field Style",
+        "description": "Visual style for the email input field",
+        "value": "outlined",
+        "required": false,
+        "options": [
+          {
+            "name": "Outlined",
+            "value": "outlined"
+          },
+          {
+            "name": "Filled",
+            "value": "filled"
+          },
+          {
+            "name": "Underlined",
+            "value": "underlined"
+          },
+          {
+            "name": "Pill",
+            "value": "pill"
+          },
+          {
+            "name": "Sharp",
+            "value": "sharp"
+          },
+          {
+            "name": "Minimal",
+            "value": "minimal"
+          },
+          {
+            "name": "Inset",
+            "value": "inset"
+          },
+          {
+            "name": "Soft",
+            "value": "soft"
+          },
+          {
+            "name": "Glass",
+            "value": "glass"
+          },
+          {
+            "name": "High Contrast",
+            "value": "high-contrast"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "buttonColorEmpty",
+        "label": "Button Color (Empty)",
+        "description": "Button color before any email is entered",
+        "value": "muted",
+        "required": false,
+        "options": [
+          {
+            "name": "Muted",
+            "value": "muted"
+          },
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Brand",
+            "value": "brand"
+          },
+          {
+            "name": "Accent",
+            "value": "accent"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Outline Dark",
+            "value": "outline-dark"
+          },
+          {
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "name": "Warning",
+            "value": "warning"
+          },
+          {
+            "name": "Negative",
+            "value": "negative"
+          },
+          {
+            "name": "Info",
+            "value": "info"
+          },
+          {
+            "name": "Inherit",
+            "value": "inherit"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "buttonColorFilled",
+        "label": "Button Color (Filled)",
+        "description": "Button color after email text is entered",
+        "value": "dark",
+        "required": false,
+        "options": [
+          {
+            "name": "Muted",
+            "value": "muted"
+          },
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Brand",
+            "value": "brand"
+          },
+          {
+            "name": "Accent",
+            "value": "accent"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Outline Dark",
+            "value": "outline-dark"
+          },
+          {
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "name": "Warning",
+            "value": "warning"
+          },
+          {
+            "name": "Negative",
+            "value": "negative"
+          },
+          {
+            "name": "Info",
+            "value": "info"
+          },
+          {
+            "name": "Inherit",
+            "value": "inherit"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "fullWidth",
+        "label": "Full Width Background",
+        "description": "Expand the newsletter background band to full viewport width",
+        "value": false,
+        "required": false
+      }
+    ]
+  },
+  {
     "id": "product-details",
     "fields": [
       {
@@ -457,6 +1682,10 @@
         "description": "Optional: Specify a default product SKU if this is a template page"
       }
     ]
+  },
+  {
+    "id": "product-highlights",
+    "fields": []
   },
   {
     "id": "product-list-page",
@@ -493,6 +1722,353 @@
     ]
   },
   {
+    "id": "promotional-hero",
+    "fields": []
+  },
+  {
+    "id": "quiz-router",
+    "fields": [
+      {
+        "component": "select",
+        "name": "rowType",
+        "label": "Row Type",
+        "description": "Use question to start a step, then add option rows below it.",
+        "options": [
+          {
+            "name": "Question",
+            "value": "question"
+          },
+          {
+            "name": "Option",
+            "value": "option"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "label",
+        "label": "Question Text or Option Label",
+        "description": "For options, Label|URL is supported as a shorthand."
+      },
+      {
+        "component": "text",
+        "name": "url",
+        "label": "Destination URL (Options: #next or /path)",
+        "description": "Use #next or leave empty to advance; same-origin URLs route immediately."
+      }
+    ]
+  },
+  {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "quotation",
+        "label": "Quotation",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "attribution",
+        "label": "Attribution"
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "source",
+        "label": "Data Source URL",
+        "description": "URL to the query index JSON (defaults to /query-index.json)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sourceText",
+        "label": "Data Source URL Text"
+      }
+    ]
+  },
+  {
+    "id": "store-locator",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "googleMapsApiKey",
+        "label": "Google Maps API Key",
+        "description": "API key for Maps JavaScript API and Places API (New)",
+        "value": "",
+        "required": false
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "defaultView",
+        "label": "Default View",
+        "description": "Initial display layout for the store locator",
+        "value": "split",
+        "required": false,
+        "options": [
+          {
+            "name": "Split View (50/50)",
+            "value": "split"
+          },
+          {
+            "name": "Map Focused (Sidebar)",
+            "value": "map"
+          },
+          {
+            "name": "List Only (No Map)",
+            "value": "list"
+          }
+        ]
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "searchRadius",
+        "label": "Search Radius",
+        "description": "Default radius (set 0 for All stores)",
+        "value": 0,
+        "required": false,
+        "validation": {
+          "numberMin": 0,
+          "numberMax": 100
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "maxResults",
+        "label": "Maximum Results",
+        "description": "Maximum number of stores to display",
+        "value": 10,
+        "required": false,
+        "validation": {
+          "numberMin": 5,
+          "numberMax": 50
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autoDetect",
+        "label": "Auto-Detect Location",
+        "description": "Automatically use browser geolocation on page load",
+        "value": true,
+        "required": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "defaultLocation",
+        "label": "Default Location",
+        "description": "Fallback location if geolocation is denied (e.g., 'Portland, OR')",
+        "value": "Portland, OR",
+        "required": false
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "servicesFilter",
+        "label": "Available Service Filters",
+        "description": "Services that users can filter stores by",
+        "value": [
+          "pharmacy",
+          "pickup",
+          "delivery",
+          "24-hour",
+          "deli",
+          "bakery"
+        ],
+        "required": false,
+        "options": [
+          {
+            "name": "Pharmacy",
+            "value": "pharmacy"
+          },
+          {
+            "name": "Pickup",
+            "value": "pickup"
+          },
+          {
+            "name": "Delivery",
+            "value": "delivery"
+          },
+          {
+            "name": "24 Hour",
+            "value": "24-hour"
+          },
+          {
+            "name": "Deli",
+            "value": "deli"
+          },
+          {
+            "name": "Bakery",
+            "value": "bakery"
+          },
+          {
+            "name": "Organic",
+            "value": "organic"
+          },
+          {
+            "name": "Gas Station",
+            "value": "gas-station"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "experienceMode",
+        "label": "Experience Mode",
+        "description": "Fast = lighter payloads; Rich = photos and reviews",
+        "value": "fast",
+        "required": false,
+        "options": [
+          {
+            "name": "Fast",
+            "value": "fast"
+          },
+          {
+            "name": "Rich",
+            "value": "rich"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "radiusPresets",
+        "label": "Radius Presets",
+        "description": "Comma-separated radius options shown in the UI (example: 0,5,10,25,50)",
+        "value": "0,5,10,25,50",
+        "required": false
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "units",
+        "label": "Distance Units",
+        "description": "Unit for distance display and radius filtering",
+        "value": "miles",
+        "required": false,
+        "options": [
+          {
+            "name": "Miles",
+            "value": "miles"
+          },
+          {
+            "name": "Kilometers",
+            "value": "km"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "noResultsMessage",
+        "label": "No Results Message",
+        "description": "Message shown when no stores match current filters",
+        "value": "No stores found matching your criteria. Please try a different search or remove some filters.",
+        "required": false
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "maxReviewsPerStore",
+        "label": "Max Reviews Per Store",
+        "description": "Maximum review count to render in rich details",
+        "value": 5,
+        "required": false,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 20
+        }
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "mapStyle",
+        "label": "Map Style",
+        "description": "Map visual style (uses configured map IDs)",
+        "value": "default",
+        "required": false,
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Muted",
+            "value": "muted"
+          },
+          {
+            "name": "Minimal",
+            "value": "minimal"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "primaryCtaLabel",
+        "label": "Primary CTA Label",
+        "description": "Primary action label on store cards and info window links",
+        "value": "Get Directions",
+        "required": false
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "cardDensity",
+        "label": "Store Card Density",
+        "description": "Adjust card spacing for list layout",
+        "value": "comfortable",
+        "required": false,
+        "options": [
+          {
+            "name": "Comfortable",
+            "value": "comfortable"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table",
+    "fields": []
+  },
+  {
+    "id": "tab-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Tab Label",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content",
+        "label": "Tab Content",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "targeted-block",
     "fields": [
       {
@@ -523,6 +2099,193 @@
         "name": "fragment",
         "label": "Fragment",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "top-banner",
+    "fields": []
+  },
+  {
+    "id": "triptych",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line1",
+        "label": "Line 1",
+        "value": "When"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line2",
+        "label": "Line 2",
+        "value": "nature"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line3",
+        "label": "Line 3",
+        "value": "perfects"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line4",
+        "label": "Line 4",
+        "value": "something,"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line5",
+        "label": "Line 5",
+        "value": "we don't"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line6",
+        "label": "Line 6",
+        "value": "alter it, we"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "line7",
+        "label": "Line 7",
+        "value": "reveal it."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media1",
+        "label": "Media 1",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption1",
+        "label": "Caption 1",
+        "value": "Purity is not created. It's preserved."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media2",
+        "label": "Media 2",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption2",
+        "label": "Caption 2",
+        "value": "Aupale exists not to reinvent, but to respect."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media3",
+        "label": "Media 3",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption3",
+        "label": "Caption 3",
+        "value": "We let time, patience, and precision guide every step."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media4",
+        "label": "Media 4",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption4",
+        "label": "Caption 4",
+        "value": "Materials carry memory long before they carry color."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media5",
+        "label": "Media 5",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption5",
+        "label": "Caption 5",
+        "value": "Each finish is chosen to feel discovered, not manufactured."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media6",
+        "label": "Media 6",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption6",
+        "label": "Caption 6",
+        "value": "Quiet structure lets texture do the speaking."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media7",
+        "label": "Media 7",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "caption7",
+        "label": "Caption 7",
+        "value": "The final layer should feel gathered over time, not rushed."
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "poster",
+        "label": "Poster Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "posterAlt",
+        "label": "Poster Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videoUrl",
+        "label": "Video URL",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videoUrlText",
+        "label": "Video URL Text"
       }
     ]
   }

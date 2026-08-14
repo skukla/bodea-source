@@ -66,6 +66,23 @@
     ]
   },
   {
+    "id": "circle-carousel",
+    "components": [
+      "circle-carousel-item"
+    ]
+  },
+  {
+    "id": "circle-carousel-item",
+    "components": []
+  },
+  {
+    "id": "circle-carousel-cell",
+    "components": [
+      "text",
+      "image"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "columns-row"
@@ -80,6 +97,48 @@
     "components": [
       "text",
       "image"
+    ]
+  },
+  {
+    "id": "quiz-router",
+    "components": []
+  },
+  {
+    "id": "store-locator",
+    "components": [
+      "store-locator-item"
+    ]
+  },
+  {
+    "id": "store-locator-item",
+    "components": []
+  },
+  {
+    "id": "store-locator-cell",
+    "components": [
+      "text"
+    ]
+  },
+  {
+    "id": "table",
+    "components": [
+      "table-row"
+    ]
+  },
+  {
+    "id": "table-row",
+    "components": []
+  },
+  {
+    "id": "table-cell",
+    "components": [
+      "text"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab-item"
     ]
   }
 ]

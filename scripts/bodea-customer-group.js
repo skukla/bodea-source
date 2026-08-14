@@ -6,18 +6,19 @@
  * it drives the storefront's own CS_FETCH_GRAPHQL instance (exported at
  * boilerplate commerce.js:45) from the outside.
  *
- * On sign-in (and on initial load when already authenticated) it fetches the
- * customer group UID, hashes it (base64-decode → SHA-1 → hex, matching the
- * upstream algorithm byte-for-byte), sets the `Magento-Customer-Group` header
- * on Catalog Service requests, and session-caches the UID. On sign-out it
- * clears the header and cache. Every path no-ops safely when the user is not
- * authenticated, the query fails, or the backend lacks the field.
+ * Every visitor gets a group header — that is what makes customer-group
+ * pricing demoable for guests too: signed-in users resolve their real group
+ * UID via GraphQL; guests (or any failed/absent resolution) normalize to the
+ * Commerce guest group `MA==` (base64 "0"), exactly as the upstream code
+ * does. The UID is hashed (base64-decode → SHA-1 → hex, matching the
+ * upstream algorithm byte-for-byte) into the `Magento-Customer-Group`
+ * header and session-cached; auth changes re-resolve with force. Every path
+ * no-ops safely when the query fails or the backend lacks the field.
  *
  * No hardcoded endpoints or tenant ids — the endpoint comes from the
  * storefront's own config via commerce.js.
  */
 import { events } from '@dropins/tools/event-bus.js';
-import { getCookie } from '@dropins/tools/lib.js';
 import {
   CS_FETCH_GRAPHQL,
   commerceEndpointWithQueryParams,
@@ -36,10 +37,11 @@ const CUSTOMER_GROUP_UID_QUERY = `
 
 const CUSTOMER_GROUP_UID_SESSION_KEY = 'DROPINS_CUSTOMER_GROUP_UID';
 const CUSTOMER_GROUP_HEADER = 'Magento-Customer-Group';
-const AUTH_COOKIE = 'auth_dropin_user_token';
+// base64("0") — the Commerce guest group. Guests always send this header so
+// guest-group catalog pricing works (upstream DEFAULT_GUEST_CUSTOMER_GROUP_UID).
+const DEFAULT_GUEST_CUSTOMER_GROUP_UID = 'MA==';
 
 let customerGroupUidPromise = null;
-let headerApplied = false;
 
 /**
  * Hashes a Commerce customer group UID the way the backend expects:
@@ -120,42 +122,46 @@ function fetchCustomerGroupUid() {
   return customerGroupUidPromise;
 }
 
-async function applyCustomerGroupHeader() {
-  const customerGroupUid = getStoredCustomerGroupUid() || await fetchCustomerGroupUid();
-  const customerGroupHeader = await hashCustomerGroupUid(customerGroupUid);
-  if (!customerGroupHeader) return;
+/**
+ * Resolves the visitor's group (real for signed-in, guest `MA==` otherwise),
+ * hashes it, and applies the Catalog Service header + cache-buster. Mirrors
+ * the upstream refreshCatalogCustomerGroupHeader: `force` bypasses the
+ * session cache (used on auth changes so sign-in/out re-resolves).
+ * @param {{force?: boolean}} [options]
+ */
+async function refreshCustomerGroupHeader({ force = false } = {}) {
+  const cachedUid = !force && getStoredCustomerGroupUid();
+  const customerGroupUid = cachedUid || await fetchCustomerGroupUid();
+  const normalizedUid = customerGroupUid || DEFAULT_GUEST_CUSTOMER_GROUP_UID;
+  const customerGroupHeader = await hashCustomerGroupUid(normalizedUid);
 
-  storeCustomerGroupUid(customerGroupUid);
+  if (!customerGroupHeader) {
+    // Hash failure (malformed UID): fall back to headerless requests.
+    storeCustomerGroupUid(null);
+    CS_FETCH_GRAPHQL.removeFetchGraphQlHeader(CUSTOMER_GROUP_HEADER);
+    await refreshCatalogServiceEndpoint();
+    return;
+  }
+
+  storeCustomerGroupUid(normalizedUid);
   CS_FETCH_GRAPHQL.setFetchGraphQlHeader(CUSTOMER_GROUP_HEADER, customerGroupHeader);
   await refreshCatalogServiceEndpoint({ [CUSTOMER_GROUP_HEADER]: customerGroupHeader });
-  headerApplied = true;
 }
 
-async function clearCustomerGroupHeader() {
-  storeCustomerGroupUid(null);
-  if (!headerApplied) return;
-
-  CS_FETCH_GRAPHQL.removeFetchGraphQlHeader(CUSTOMER_GROUP_HEADER);
-  await refreshCatalogServiceEndpoint();
-  headerApplied = false;
-}
-
-async function onAuthChange(authenticated) {
+async function onAuthChange() {
   try {
-    if (authenticated) {
-      await applyCustomerGroupHeader();
-    } else {
-      await clearCustomerGroupHeader();
-    }
+    // Force so sign-in/out re-resolves instead of reusing the cached group.
+    await refreshCustomerGroupHeader({ force: true });
   } catch {
     // Never let customer-group context break the storefront.
   }
 }
 
-// Auth wiring: `eager` replays the last emitted auth state; the cookie check
-// covers already-authenticated first loads where the event has not fired yet.
+// Every load applies a group header (guest or real) so group pricing is
+// always active; auth events re-resolve. `eager` replays a pre-registration
+// auth event, and the initial call covers plain guest loads.
 events.on('authenticated', onAuthChange, { eager: true });
 
-if (events.lastPayload('authenticated') === undefined && getCookie(AUTH_COOKIE)) {
-  onAuthChange(true);
-}
+refreshCustomerGroupHeader().catch(() => {
+  // Never let customer-group context break the storefront.
+});

@@ -1,0 +1,23 @@
+{
+  "definitions": [
+    {
+      "title": "Catalog Highlights",
+      "id": "catalog-highlights",
+      "model": "catalog-highlights",
+      "plugins": {
+        "da": {
+          "name": "catalog-highlights",
+          "rows": 1,
+          "columns": 8
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "catalog-highlights",
+      "fields": []
+    }
+  ],
+  "filters": []
+}

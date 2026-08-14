@@ -1,0 +1,40 @@
+{
+  "definitions": [
+    {
+      "title": "Search",
+      "id": "search",
+      "model": "search",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "source", "selector": "div>div>p>a[href]" },
+            { "name": "sourceText", "selector": "div>div>p>a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "search",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "source",
+          "label": "Data Source URL",
+          "description": "URL to the query index JSON (defaults to /query-index.json)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "sourceText",
+          "label": "Data Source URL Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

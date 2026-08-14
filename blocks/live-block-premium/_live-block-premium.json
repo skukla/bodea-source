@@ -1,0 +1,187 @@
+{
+  "definitions": [
+    {
+      "title": "Live Block Premium",
+      "id": "live-block-premium",
+      "model": "live-block-premium",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "live-block-premium",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "value": "Live Commerce Dashboard"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "guest-cta-label",
+          "label": "Guest CTA Label",
+          "value": "Sign in"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "guest-cta-href",
+          "label": "Guest CTA Href",
+          "value": "/customer/login"
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "rows-limit",
+          "label": "Rows Limit",
+          "value": 3,
+          "validation": {
+            "numberMin": 1,
+            "numberMax": 5
+          }
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-sparkline",
+          "label": "Show Sparkline",
+          "value": true
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "order-window-days",
+          "label": "Order Window Days",
+          "value": 90,
+          "validation": {
+            "numberMin": 30,
+            "numberMax": 365
+          }
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "trend-points",
+          "label": "Trend Points",
+          "value": 12,
+          "validation": {
+            "numberMin": 6,
+            "numberMax": 24
+          }
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-finance-section",
+          "label": "Show Finance Section",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-operations-section",
+          "label": "Show Operations Section",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-sourcing-section",
+          "label": "Show Sourcing Section",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-charts",
+          "label": "Show Charts",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-last-updated",
+          "label": "Show Last Updated",
+          "value": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "refresh-label",
+          "label": "Refresh Label",
+          "value": "Refresh data"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "premium-accent",
+          "label": "Premium Accent",
+          "value": "emerald",
+          "options": [
+            {
+              "name": "Emerald",
+              "value": "emerald"
+            },
+            {
+              "name": "Cyan",
+              "value": "cyan"
+            },
+            {
+              "name": "Gold",
+              "value": "gold"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "premium-surface",
+          "label": "Premium Surface",
+          "value": "glass",
+          "options": [
+            {
+              "name": "Glass",
+              "value": "glass"
+            },
+            {
+              "name": "Solid",
+              "value": "solid"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "premium-style",
+          "label": "Premium Style",
+          "value": "classic",
+          "options": [
+            {
+              "name": "Classic",
+              "value": "classic"
+            },
+            {
+              "name": "Editorial Luxe",
+              "value": "editorial-luxe"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "premium-motion",
+          "label": "Premium Motion",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

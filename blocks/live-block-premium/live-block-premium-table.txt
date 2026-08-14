@@ -1,0 +1,18 @@
+live-block-premium
+title	Live Commerce Dashboard
+guest-cta-label	Sign in
+guest-cta-href	/customer/login
+rows-limit	3
+show-sparkline	true
+order-window-days	90
+trend-points	12
+show-finance-section	true
+show-operations-section	true
+show-sourcing-section	true
+show-charts	true
+show-last-updated	true
+refresh-label	Refresh data
+premium-accent	emerald
+premium-surface	glass
+premium-style	editorial-luxe
+premium-motion	true

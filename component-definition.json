@@ -970,6 +970,16 @@
           }
         },
         {
+          "title": "Commerce Account Hub",
+          "id": "commerce-account-hub",
+          "model": "commerce-account-hub",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
           "title": "Commerce Account Sidebar",
           "id": "commerce-account-sidebar",
           "model": "commerce-account-sidebar",

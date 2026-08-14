@@ -1,0 +1,75 @@
+{
+  "definitions": [
+    {
+      "title": "Commerce Account Hub",
+      "id": "commerce-account-hub",
+      "model": "commerce-account-hub",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "commerce-account-hub",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "value": "My Account Hub"
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "rows-limit",
+          "label": "Rows Limit",
+          "value": 3,
+          "validation": {
+            "numberMin": 1,
+            "numberMax": 5
+          }
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-orders",
+          "label": "Show Orders",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-addresses",
+          "label": "Show Addresses",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "show-module-cards",
+          "label": "Show Module Cards",
+          "value": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "guest-cta-label",
+          "label": "Guest CTA Label",
+          "value": "Sign in"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "guest-cta-href",
+          "label": "Guest CTA Href",
+          "value": "/customer/login"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

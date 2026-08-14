@@ -1,0 +1,204 @@
+.commerce-account-hub-wrapper .commerce-account-hub-shell {
+    border: 1px solid var(--glass-border-subtle);
+    border-radius: calc(var(--shape-border-radius-2) + 6px);
+    background: var(--glass-bg-strong);
+    backdrop-filter: var(--glass-blur-sm) var(--glass-saturate);
+    box-shadow: var(--shadow-glass);
+    display: grid;
+    gap: var(--spacing-small);
+    padding: var(--spacing-medium);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-header {
+    align-items: center;
+    display: flex;
+    gap: var(--spacing-small);
+    justify-content: space-between;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-title {
+    font: var(--type-headline-2-strong-font);
+    letter-spacing: normal;
+    margin: 0;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-badge {
+    border: 1px solid rgb(46 190 122 / 34%);
+    border-radius: 999px;
+    background: rgb(46 190 122 / 14%);
+    color: var(--green-700);
+    font: var(--type-details-overline-font);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-badge-error {
+    border-color: rgb(195 80 80 / 45%);
+    background: rgb(255 235 235 / 75%);
+    color: var(--color-alert-800);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-subtitle {
+    color: var(--color-neutral-700);
+    font: var(--type-body-2-default-font);
+    margin: 0;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-metrics {
+    display: grid;
+    gap: var(--spacing-small);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-metric {
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: var(--shape-border-radius-2);
+    background: var(--glass-bg);
+    display: grid;
+    gap: 6px;
+    min-height: 84px;
+    padding: var(--spacing-small);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-metric-label {
+    color: var(--color-neutral-600);
+    font: var(--type-details-caption-2-font);
+    margin: 0;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-metric-value {
+    color: var(--color-neutral-900);
+    font: var(--type-headline-2-strong-font);
+    letter-spacing: normal;
+    margin: 0;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-actions {
+    display: grid;
+    gap: var(--spacing-small);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-action-card {
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: var(--shape-border-radius-2);
+    background: rgb(255 255 255 / 68%);
+    color: inherit;
+    display: grid;
+    gap: 4px;
+    min-height: 72px;
+    padding: var(--spacing-small);
+    text-decoration: none;
+    transition: transform var(--transition-fast) var(--ease-out),
+        box-shadow var(--transition-fast) var(--ease-out),
+        background-color var(--transition-fast) var(--ease-out);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-action-card:hover,
+.commerce-account-hub-wrapper .commerce-account-hub-action-card:focus-visible {
+    background: var(--glass-bg-hover);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 9%);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-action-title {
+    color: var(--color-neutral-900);
+    font: var(--type-body-2-strong-font);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-action-description {
+    color: var(--color-neutral-700);
+    font: var(--type-details-caption-2-font);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-modules {
+    display: grid;
+    gap: var(--spacing-small);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-modules-title {
+    font: var(--type-body-1-strong-font);
+    margin: 0;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-modules-grid {
+    display: grid;
+    gap: var(--spacing-small);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-module-card {
+    border: 1px solid rgb(0 0 0 / 9%);
+    border-radius: var(--shape-border-radius-2);
+    background: rgb(255 255 255 / 66%);
+    color: inherit;
+    display: grid;
+    gap: 6px;
+    padding: var(--spacing-small);
+    text-decoration: none;
+    transition: transform var(--transition-fast) var(--ease-out),
+        border-color var(--transition-fast) var(--ease-out),
+        box-shadow var(--transition-fast) var(--ease-out);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-module-card:hover,
+.commerce-account-hub-wrapper .commerce-account-hub-module-card:focus-visible {
+    border-color: rgb(46 190 122 / 35%);
+    box-shadow: 0 12px 22px rgb(0 0 0 / 10%);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-module-title {
+    color: var(--color-neutral-900);
+    font: var(--type-body-2-strong-font);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-module-description {
+    color: var(--color-neutral-700);
+    font: var(--type-details-caption-2-font);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-module-value {
+    color: var(--main-color-accent);
+    font: var(--type-body-2-emphasized-font);
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-cta {
+    align-items: center;
+    border-radius: var(--shape-border-radius-3);
+    background: linear-gradient(135deg, var(--green-500), var(--green-300));
+    color: #fff;
+    display: inline-flex;
+    font: var(--type-button-2-font);
+    justify-content: center;
+    max-width: 176px;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-cta:hover,
+.commerce-account-hub-wrapper .commerce-account-hub-cta:focus-visible {
+    filter: brightness(1.05);
+    text-decoration: none;
+}
+
+.commerce-account-hub-wrapper .commerce-account-hub-error {
+    color: var(--color-alert-800);
+    font: var(--type-details-caption-1-font);
+    margin: 0;
+}
+
+@media (max-width: 899px) {
+    .commerce-account-hub-wrapper .commerce-account-hub-shell {
+        padding: var(--spacing-small);
+    }
+
+    .commerce-account-hub-wrapper .commerce-account-hub-metrics,
+    .commerce-account-hub-wrapper .commerce-account-hub-actions,
+    .commerce-account-hub-wrapper .commerce-account-hub-modules-grid {
+        grid-template-columns: 1fr;
+    }
+}

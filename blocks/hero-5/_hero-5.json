@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Hero 5",
+      "id": "hero-5",
+      "model": "hero-5",
+      "plugins": {
+        "da": {
+          "rows": 15,
+          "columns": 1,
+          "fields": [
+            { "name": "eyebrow", "selector": "div:nth-child(1)>div:nth-child(1)" },
+            { "name": "title", "selector": "div:nth-child(2)>div:nth-child(1)" },
+            { "name": "subtitle", "selector": "div:nth-child(3)>div:nth-child(1)" },
+            { "name": "ctaPrimary", "selector": "div:nth-child(4)>div:nth-child(1)>a" },
+            { "name": "ctaSecondary", "selector": "div:nth-child(5)>div:nth-child(1)>a" },
+            { "name": "trustText", "selector": "div:nth-child(6)>div:nth-child(1)" },
+            { "name": "badgeValue", "selector": "div:nth-child(7)>div:nth-child(1)" },
+            { "name": "badgeLabel", "selector": "div:nth-child(8)>div:nth-child(1)" },
+            { "name": "metric1", "selector": "div:nth-child(9)>div:nth-child(1)" },
+            { "name": "metric2", "selector": "div:nth-child(10)>div:nth-child(1)" },
+            { "name": "metric3", "selector": "div:nth-child(11)>div:nth-child(1)" },
+            { "name": "order1", "selector": "div:nth-child(12)>div:nth-child(1)" },
+            { "name": "order2", "selector": "div:nth-child(13)>div:nth-child(1)" },
+            { "name": "order3", "selector": "div:nth-child(14)>div:nth-child(1)" },
+            { "name": "notice", "selector": "div:nth-child(15)>div:nth-child(1)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero-5",
+      "fields": [
+        { "component": "text", "valueType": "string", "name": "eyebrow", "label": "Eyebrow", "value": "" },
+        { "component": "richtext", "valueType": "string", "name": "title", "label": "Title (supports strong/del)" },
+        { "component": "text", "valueType": "string", "name": "subtitle", "label": "Subtitle", "value": "" },
+        { "component": "richtext", "valueType": "string", "name": "ctaPrimary", "label": "Primary CTA Link" },
+        { "component": "richtext", "valueType": "string", "name": "ctaSecondary", "label": "Secondary CTA Link" },
+        { "component": "richtext", "valueType": "string", "name": "trustText", "label": "Trust Text" },
+        { "component": "text", "valueType": "string", "name": "badgeValue", "label": "Badge Value", "value": "" },
+        { "component": "text", "valueType": "string", "name": "badgeLabel", "label": "Badge Label", "value": "" },
+        { "component": "text", "valueType": "string", "name": "metric1", "label": "Metric 1 (value | label | delta)", "value": "" },
+        { "component": "text", "valueType": "string", "name": "metric2", "label": "Metric 2 (value | label | delta)", "value": "" },
+        { "component": "text", "valueType": "string", "name": "metric3", "label": "Metric 3 (value | label | delta)", "value": "" },
+        { "component": "text", "valueType": "string", "name": "order1", "label": "Order 1 (name | sub-label | amount)", "value": "" },
+        { "component": "text", "valueType": "string", "name": "order2", "label": "Order 2 (name | sub-label | amount)", "value": "" },
+        { "component": "text", "valueType": "string", "name": "order3", "label": "Order 3 (name | sub-label | amount)", "value": "" },
+        { "component": "text", "valueType": "string", "name": "notice", "label": "Floating Notice", "value": "" }
+      ]
+    }
+  ],
+  "filters": []
+}

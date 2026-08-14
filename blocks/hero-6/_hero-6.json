@@ -1,0 +1,111 @@
+{
+  "definitions": [
+    {
+      "title": "Hero 6",
+      "id": "hero-6",
+      "model": "hero-6",
+      "plugins": {
+        "da": {
+          "type": "key-value-block",
+          "rows": 11,
+          "columns": 1,
+          "fields": [
+            { "name": "eyebrow",    "selector": "div:nth-child(1)>div:nth-child(1)" },
+            { "name": "title",      "selector": "div:nth-child(2)>div:nth-child(1)" },
+            { "name": "subtitle",   "selector": "div:nth-child(3)>div:nth-child(1)" },
+            { "name": "ctaPrimary", "selector": "div:nth-child(4)>div:nth-child(1)>a" },
+            { "name": "ctaSecondary","selector": "div:nth-child(5)>div:nth-child(1)>a" },
+            { "name": "stat1",      "selector": "div:nth-child(6)>div:nth-child(1)" },
+            { "name": "stat2",      "selector": "div:nth-child(7)>div:nth-child(1)" },
+            { "name": "stat3",      "selector": "div:nth-child(8)>div:nth-child(1)" },
+            { "name": "feature1",   "selector": "div:nth-child(9)>div:nth-child(1)" },
+            { "name": "feature2",   "selector": "div:nth-child(10)>div:nth-child(1)" },
+            { "name": "feature3",   "selector": "div:nth-child(11)>div:nth-child(1)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero-6",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow Label",
+          "value": "Enterprise Platform"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "title",
+          "label": "Headline (bold → green accent, italic → outline)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle / Description",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "ctaPrimary",
+          "label": "Primary CTA Link"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "ctaSecondary",
+          "label": "Secondary CTA Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "stat1",
+          "label": "Stat 1 (value | label | note)",
+          "value": "$4.2B | GMV Processed | +38% YoY"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "stat2",
+          "label": "Stat 2 (value | label | note)",
+          "value": "99.98% | Uptime SLA | Past 12 months"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "stat3",
+          "label": "Stat 3 (value | label | note)",
+          "value": "8,400+ | Enterprise Clients | 60 countries"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "feature1",
+          "label": "Feature 1 (emoji | title | description)",
+          "value": "⚡ | Blazing Performance | Sub-100ms global edge delivery at any scale"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "feature2",
+          "label": "Feature 2 (emoji | title | description)",
+          "value": "🔒 | Enterprise Security | SOC 2 Type II, ISO 27001, PCI DSS compliant"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "feature3",
+          "label": "Feature 3 (emoji | title | description)",
+          "value": "🌐 | Global Reach | Deployed across 200+ PoPs in 90 countries"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

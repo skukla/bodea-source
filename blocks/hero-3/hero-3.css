@@ -1,0 +1,664 @@
+/* ============================================================
+   Hero 3 — Split Parallax Glass Edition
+   ============================================================ */
+
+/* Container reset — override section constraints for full-bleed */
+.hero-3-container {
+  margin: 0;
+}
+
+.hero-3-container > div {
+  max-width: unset;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-3-container .hero-3-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Disable global staggered fadeInUp — hero-3 has its own entrance system */
+main > .section.appear > div > .hero-3-wrapper {
+  animation: none;
+}
+
+/* ── Section shell (same roundedness as dropdowns) ── */
+.hero-3 {
+  position: relative;
+  min-height: clamp(580px, 92vh, 960px);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: var(--shape-border-radius-3);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur) var(--glass-saturate);
+  border: 1px solid var(--glass-border);
+}
+
+/* Top shimmer line */
+.hero-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(var(--accent-glow) / 25%) 30%,
+    rgb(var(--accent-deep-glow) / 30%) 50%,
+    rgb(5 150 105 / 18%) 70%,
+    transparent
+  );
+  z-index: 2;
+}
+
+/* Frosted inner glow */
+.hero-3::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 70% 50%, rgb(var(--accent-glow) / 4%), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── BG parallax layer ── */
+.hero-3-bg-layer {
+  position: absolute;
+  inset: -15%;
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Vertical text rail ── */
+.hero-3-vert-rail {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgb(var(--accent-glow) / 25%);
+  white-space: nowrap;
+  z-index: 3;
+  user-select: none;
+  font-weight: 400;
+}
+
+/* ── Inner grid ── */
+.hero-3-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(2.4rem, 5vw, 6.4rem);
+  gap: clamp(2.4rem, 4vw, 5.6rem);
+  align-items: center;
+}
+
+/* ============================================================
+   TEXT COLUMN
+   ============================================================ */
+.hero-3-text-col {
+  padding: clamp(4rem, 8vh, 9.6rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 2vh, 2rem);
+}
+
+/* Urgency chip */
+.hero-3-urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--accent-1);
+  background: rgb(var(--accent-glow) / 8%);
+  border: 1px solid rgb(var(--accent-glow) / 20%);
+  border-radius: 100px;
+  padding: 0.5rem 1.2rem;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+}
+
+.hero-3-urgency-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-1);
+  flex-shrink: 0;
+  animation: hero3-pulse-dot 1.8s ease-in-out infinite;
+}
+
+/* Eyebrow */
+.hero-3-eyebrow {
+  font-size: 1.2rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgb(var(--accent-glow) / 45%);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Headline */
+.hero-3-headline {
+  font-size: clamp(4.2rem, 7.5vw, 8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    135deg,
+    var(--accent-1) 0%,
+    var(--accent-2) 45%,
+    var(--color-neutral-900) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  margin: 0;
+}
+
+.hero-3-headline-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-3-headline-line.italic {
+  font-style: italic;
+}
+
+.hero-3-headline-line.indent {
+  padding-left: clamp(1.2rem, 3vw, 2.8rem);
+}
+
+/* Subcopy */
+.hero-3-subcopy {
+  font-size: clamp(1.5rem, 1.5vw, 1.75rem);
+  line-height: 1.7;
+  color: var(--color-neutral-900);
+  opacity: 0.65;
+  max-width: 40ch;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* CTA row */
+.hero-3-cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+/* Primary CTA */
+.hero-3-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.1rem 2.4rem;
+  border-radius: var(--shape-border-radius-3);
+  box-shadow: var(--shadow-button);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s var(--ease-spring),
+    box-shadow 0.3s var(--ease-out),
+    gap 0.25s var(--ease-out);
+}
+
+.hero-3-cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgb(255 255 255 / 15%) 100%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.hero-3-cta-primary::after {
+  display: none;
+}
+
+.hero-3-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button-hover);
+  gap: 1rem;
+  color: #fff;
+}
+
+.hero-3-cta-primary:hover::before {
+  opacity: 1;
+}
+
+.hero-3-cta-arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.hero-3-cta-primary:hover .hero-3-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Secondary CTA */
+.hero-3-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+  text-decoration: none;
+  background: var(--glass-bg);
+  border: 1.5px solid rgb(var(--accent-glow) / 25%);
+  border-radius: var(--shape-border-radius-3);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(8px);
+  transition:
+    background 0.25s var(--ease-out),
+    border-color 0.25s,
+    transform 0.3s var(--ease-spring),
+    box-shadow 0.25s;
+}
+
+.hero-3-cta-secondary::after {
+  display: none;
+}
+
+.hero-3-cta-secondary:hover {
+  background: rgb(var(--accent-glow) / 8%);
+  border-color: rgb(var(--accent-glow) / 40%);
+  color: var(--accent-2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgb(var(--accent-glow) / 12%);
+}
+
+/* Trust row */
+.hero-3-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--glass-border-subtle);
+}
+
+.hero-3-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--color-neutral-900);
+  opacity: 0.55;
+  letter-spacing: 0.04em;
+}
+
+.hero-3-trust-icon {
+  color: var(--accent-1);
+  opacity: 1;
+  font-size: 1.1em;
+}
+
+/* Badges */
+.hero-3-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hero-3-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: var(--shape-border-radius-2);
+  padding: 0.5rem 1rem;
+  color: var(--color-neutral-900);
+  opacity: 0.8;
+  backdrop-filter: blur(8px);
+}
+
+.hero-3-badge-icon {
+  color: var(--accent-1);
+}
+
+/* ============================================================
+   MEDIA COLUMN
+   ============================================================ */
+.hero-3-media-col {
+  position: relative;
+  height: clamp(460px, 88vh, 880px);
+  align-self: stretch;
+}
+
+/* Main image — glassmorphic card frame */
+.hero-3-media-main {
+  position: absolute;
+  inset: clamp(2.4rem, 5vh, 5.6rem) clamp(-1.6rem, -3vw, -3.2rem) clamp(2.4rem, 5vh, 5.6rem) 0;
+  border-radius: var(--shape-border-radius-3);
+  overflow: hidden;
+  will-change: transform;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-3-media-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 12%) 0%,
+    transparent 50%,
+    rgb(var(--accent-glow) / 4%) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.hero-3-media-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-3-media-main picture {
+  display: contents;
+}
+
+/* Rotated label */
+.hero-3-rotated-label {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgb(var(--accent-glow) / 70%);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+  box-shadow: 0 2px 12px rgb(var(--accent-glow) / 10%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* Floating accent cards */
+.hero-3-decor-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-3-accent-card {
+  position: absolute;
+  width: clamp(120px, 15vw, 180px);
+  border-radius: var(--shape-border-radius-2);
+  overflow: hidden;
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur-sm) var(--glass-saturate);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass-hover);
+}
+
+.hero-3-accent-card:nth-child(1) {
+  top: 6%;
+  right: 0;
+  animation: hero3-float-card 5s ease-in-out infinite;
+}
+
+.hero-3-accent-card:nth-child(2) {
+  bottom: 8%;
+  left: -6%;
+  animation: hero3-float-card-2 6s ease-in-out infinite;
+}
+
+.hero-3-accent-card-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.hero-3-accent-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-3-accent-card-img picture {
+  display: contents;
+}
+
+.hero-3-card-label {
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+  font-weight: 500;
+  border-top: 1px solid var(--glass-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-3-card-label-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-3);
+}
+
+/* Accent color slab */
+.hero-3-color-slab {
+  position: absolute;
+  bottom: -2rem;
+  right: -3rem;
+  width: 45%;
+  height: 30%;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  opacity: 0.06;
+  border-radius: var(--shape-border-radius-3);
+  transform: rotate(8deg);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* ============================================================
+   ENTRANCE ANIMATIONS
+   ============================================================ */
+.hero-3-motion .hero-3-stagger {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s var(--ease-out),
+    transform 0.8s var(--ease-out);
+}
+
+.hero-3-motion .hero-3-media-main {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition:
+    opacity 1s var(--ease-out),
+    transform 1s var(--ease-out);
+}
+
+.hero-3-motion .hero-3-accent-card {
+  opacity: 0;
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+}
+
+.hero-3-motion .hero-3-accent-card:nth-child(1) {
+  transform: translateY(20px) rotate(4deg);
+}
+
+.hero-3-motion .hero-3-accent-card:nth-child(2) {
+  transform: translateY(20px) rotate(-3deg);
+}
+
+.hero-3-entered .hero-3-stagger {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-3-entered .hero-3-media-main {
+  opacity: 1;
+  transform: none;
+  transition-delay: 80ms;
+}
+
+.hero-3-entered .hero-3-accent-card:nth-child(1) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 700ms;
+}
+
+.hero-3-entered .hero-3-accent-card:nth-child(2) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 880ms;
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes hero3-float-card {
+  0%, 100% { transform: rotate(4deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(-8px); }
+}
+
+@keyframes hero3-float-card-2 {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-6px); }
+}
+
+@keyframes hero3-pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(var(--accent-glow) / 40%);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgb(var(--accent-glow) / 0%);
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero-3-vert-rail {
+    display: none;
+  }
+
+  .hero-3-inner {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
+  }
+
+  .hero-3-media-col {
+    height: clamp(280px, 60vw, 420px);
+    order: -1;
+  }
+
+  .hero-3-media-main {
+    inset: 0;
+    border-radius: 0;
+  }
+
+  .hero-3-accent-card:nth-child(2) {
+    display: none;
+  }
+
+  .hero-3-accent-card:nth-child(1) {
+    width: clamp(80px, 24vw, 120px);
+  }
+
+  .hero-3-rotated-label {
+    display: none;
+  }
+
+  .hero-3-text-col {
+    padding: 2.4rem 2rem 3.2rem;
+  }
+
+  .hero-3-subcopy {
+    max-width: none;
+  }
+
+  .hero-3-headline {
+    font-size: clamp(3.6rem, 9.5vw, 5.8rem);
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-3-urgency-dot {
+    animation: none;
+  }
+
+  .hero-3-accent-card {
+    animation: none !important;
+  }
+
+  .hero-3-motion .hero-3-stagger,
+  .hero-3-motion .hero-3-media-main,
+  .hero-3-motion .hero-3-accent-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-3-accent-card:nth-child(1) {
+    transform: rotate(4deg) !important;
+  }
+
+  .hero-3-accent-card:nth-child(2) {
+    transform: rotate(-3deg) !important;
+  }
+}

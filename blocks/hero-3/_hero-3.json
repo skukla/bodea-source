@@ -1,0 +1,125 @@
+{
+  "definitions": [
+    {
+      "title": "Hero 3",
+      "id": "hero-3",
+      "model": "hero-3",
+      "plugins": {
+        "da": {
+          "rows": 9,
+          "columns": 2,
+          "fields": [
+            { "name": "urgency", "selector": "div:nth-child(1)>div:nth-child(1)" },
+            { "name": "eyebrow", "selector": "div:nth-child(1)>div:nth-child(2)" },
+            { "name": "headline", "selector": "div:nth-child(2)>div:nth-child(1)" },
+            { "name": "subcopy", "selector": "div:nth-child(3)>div:nth-child(1)" },
+            { "name": "cta", "selector": "div:nth-child(4)>div:nth-child(1)" },
+            { "name": "trust", "selector": "div:nth-child(5)>div:nth-child(1)" },
+            { "name": "badges", "selector": "div:nth-child(6)>div:nth-child(1)" },
+            { "name": "mainImage", "selector": "div:nth-child(7)>div:nth-child(1)>picture>img[src]" },
+            { "name": "railText", "selector": "div:nth-child(7)>div:nth-child(2)" },
+            { "name": "accent1Image", "selector": "div:nth-child(8)>div:nth-child(1)>picture>img[src]" },
+            { "name": "accent1Label", "selector": "div:nth-child(8)>div:nth-child(2)" },
+            { "name": "accent2Image", "selector": "div:nth-child(9)>div:nth-child(1)>picture>img[src]" },
+            { "name": "accent2Label", "selector": "div:nth-child(9)>div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero-3",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "urgency",
+          "label": "Urgency Text",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "headline",
+          "label": "Headline (paragraphs; em=italic, strong=indent)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subcopy",
+          "label": "Subcopy",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "cta",
+          "label": "CTA Buttons (links)"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "trust",
+          "label": "Trust Items (list with icon prefix)"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "badges",
+          "label": "Badges (list with icon prefix)"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "mainImage",
+          "label": "Main Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "railText",
+          "label": "Vertical Rail Text",
+          "value": ""
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "accent1Image",
+          "label": "Accent Card 1 Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "accent1Label",
+          "label": "Accent Card 1 Label",
+          "value": ""
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "accent2Image",
+          "label": "Accent Card 2 Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "accent2Label",
+          "label": "Accent Card 2 Label",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

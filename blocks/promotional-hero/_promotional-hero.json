@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "title": "Promotional Hero",
+      "id": "promotional-hero",
+      "plugins": {
+        "da": {
+          "name": "promotional-hero",
+          "rows": 3,
+          "columns": 3
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "promotional-hero",
+      "fields": []
+    }
+  ],
+  "filters": []
+}

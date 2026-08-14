@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "VIP Member Block Real V2",
+      "id": "vip-member-block-real-v2",
+      "model": "vip-member-block-real-v2",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "vip-member-block-real-v2",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow-text",
+          "label": "Eyebrow Text",
+          "value": "Private Member Offers - Q1 2025"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle",
+          "value": "Member-only pricing, first-access inventory, and concierge procurement - built for enterprise IT operations."
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "rows-limit",
+          "label": "Rows Limit",
+          "value": 3,
+          "validation": {
+            "numberMin": 1,
+            "numberMax": 5
+          }
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "guest-cta-label",
+          "label": "Guest CTA Label",
+          "value": "Sign in"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "guest-cta-href",
+          "label": "Guest CTA Href",
+          "value": "/customer/login"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

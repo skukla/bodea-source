@@ -1,0 +1,43 @@
+{
+  "definitions": [
+    {
+      "title": "Product Teaser",
+      "id": "product-teaser",
+      "model": "product-teaser",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "product-teaser",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "sku",
+          "label": "Product SKU",
+          "required": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "details-button",
+          "label": "Show Details Button",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "cart-button",
+          "label": "Show Add to Cart Button",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

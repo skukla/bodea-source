@@ -16,6 +16,7 @@ import {
 export function encodeSkuForUrl(sku) {
   const bytes = new TextEncoder().encode(sku.toLowerCase());
   let out = '';
+  // eslint-disable-next-line no-restricted-syntax
   for (const b of bytes) {
     const ch = String.fromCharCode(b);
     out += /[a-z0-9-]/.test(ch) ? ch : `_${b.toString(16).padStart(2, '0')}`;

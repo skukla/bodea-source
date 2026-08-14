@@ -239,7 +239,6 @@ main > .section.search-bar-live-results-open {
 
 .search-bar-results {
   background: var(--search-bar-results-bg);
-  -webkit-backdrop-filter: var(--search-bar-results-blur) var(--search-bar-results-saturate);
   backdrop-filter: var(--search-bar-results-blur) var(--search-bar-results-saturate);
   border: var(--search-bar-form-border-width) solid var(--search-bar-results-border);
   border-radius: var(--search-bar-radius);

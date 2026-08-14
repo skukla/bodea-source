@@ -1,0 +1,89 @@
+{
+  "definitions": [
+    {
+      "title": "Guided Selling Luxe",
+      "id": "guided-selling-luxe",
+      "model": "guided-selling-luxe",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "guided-selling-luxe",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "schema-url",
+          "label": "Schema URL",
+          "required": true,
+          "value": "/data/guided-selling/bodea-rack-finder.json"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow-text",
+          "label": "Eyebrow Text",
+          "value": "Bodea Rack Finder"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "value": "Find the right rack architecture in guided steps."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle",
+          "value": "Move from deployment context to a curated Bodea recommendation set without losing the premium catalog feel."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "primary-cta-label",
+          "label": "Primary CTA Label",
+          "value": "Start the rack finder"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "secondary-cta-label",
+          "label": "Secondary CTA Label",
+          "value": "Talk to a Bodea specialist"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "secondary-cta-href",
+          "label": "Secondary CTA Href",
+          "value": "/contact"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "theme",
+          "label": "Theme",
+          "value": "emerald",
+          "options": [
+            {
+              "name": "Emerald",
+              "value": "emerald"
+            },
+            {
+              "name": "Gold",
+              "value": "gold"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

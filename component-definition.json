@@ -970,6 +970,16 @@
           }
         },
         {
+          "title": "Guided Selling Luxe",
+          "id": "guided-selling-luxe",
+          "model": "guided-selling-luxe",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
           "title": "Commerce Account Header",
           "id": "commerce-account-header",
           "model": "commerce-account-header",

@@ -141,6 +141,9 @@
           "...": "../blocks/luxury-configurator/_*.json#/definitions"
         },
         {
+          "...": "../blocks/guided-selling-luxe/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/commerce-*/_*.json#/definitions"
         }
       ]

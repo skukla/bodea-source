@@ -1,0 +1,495 @@
+{
+  "id": "bodea-rack-finder",
+  "version": "1.0.0",
+  "theme": "emerald",
+  "contactHref": "/support",
+  "compareHref": "/racks",
+  "tieBreakerOrder": [
+    "power-load",
+    "rack-units",
+    "deployment-site"
+  ],
+  "hero": {
+    "eyebrow": "Bodea Rack Finder",
+    "title": "Find the right enclosure for the way you actually deploy",
+    "subtitle": "Five questions on site, capacity, power, cooling, and access. We rank the enclosure families that fit and show you live inventory.",
+    "body": "Built for network and facilities teams specifying racks for edge sites, IDF rooms, and data center halls.",
+    "primaryCtaLabel": "Start the rack finder",
+    "secondaryCtaLabel": "Talk to a Bodea specialist",
+    "secondaryCtaHref": "/support",
+    "badges": [
+      "5 questions",
+      "About 2 minutes",
+      "Live inventory"
+    ],
+    "stats": [
+      {
+        "label": "Enclosure families",
+        "value": "6"
+      },
+      {
+        "label": "Typical spec time saved",
+        "value": "3 hrs"
+      },
+      {
+        "label": "Ships from stock",
+        "value": "Most SKUs"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "deployment-site",
+      "kicker": "Step 1 \u00b7 Location",
+      "title": "Where will this rack live?",
+      "description": "Site conditions drive depth, mounting, and how much you can rely on ambient air.",
+      "supportCopy": "Pick the environment closest to your install.",
+      "answers": [
+        {
+          "id": "closet",
+          "label": "Branch or retail closet",
+          "subtitle": "Shared space, no raised floor",
+          "description": "Often a wall or a corner of a utility room.",
+          "badge": "Compact",
+          "previewLabel": "Branch closet",
+          "weights": {
+            "edge-site": 5,
+            "growth-network": 2,
+            "core-datacenter": 0,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "office-idf",
+          "label": "Office IDF room",
+          "subtitle": "Dedicated but shared with building services",
+          "description": "A floor-level distribution room serving one or two floors.",
+          "badge": "Common",
+          "previewLabel": "Office IDF",
+          "weights": {
+            "edge-site": 2,
+            "growth-network": 5,
+            "core-datacenter": 1,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "server-room",
+          "label": "Dedicated server room",
+          "subtitle": "Conditioned, access-controlled",
+          "description": "A room built for equipment, with its own cooling.",
+          "badge": "Structured",
+          "previewLabel": "Server room",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 3,
+            "core-datacenter": 5,
+            "high-density": 2
+          }
+        },
+        {
+          "id": "dc-hall",
+          "label": "Data center hall",
+          "subtitle": "Row-and-aisle layout",
+          "description": "Structured power, containment, and row-level cooling.",
+          "badge": "At scale",
+          "previewLabel": "DC hall",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 0,
+            "core-datacenter": 5,
+            "high-density": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "rack-units",
+      "kicker": "Step 2 \u00b7 Capacity",
+      "title": "How much equipment are you mounting?",
+      "description": "Usable rack units, counting the growth you already know about.",
+      "supportCopy": "Estimate high \u2014 headroom is cheaper than a second rack.",
+      "answers": [
+        {
+          "id": "under-12u",
+          "label": "Under 12U",
+          "subtitle": "A switch, a patch panel, a small UPS",
+          "description": "Fits a wall-mount enclosure.",
+          "badge": "Minimal",
+          "previewLabel": "Under 12U",
+          "weights": {
+            "edge-site": 5,
+            "growth-network": 1,
+            "core-datacenter": 0,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "12-24u",
+          "label": "12U to 24U",
+          "subtitle": "A stack plus storage",
+          "description": "Outgrowing wall-mount; needs a floor enclosure.",
+          "badge": "Mid",
+          "previewLabel": "12\u201324U",
+          "weights": {
+            "edge-site": 3,
+            "growth-network": 5,
+            "core-datacenter": 1,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "25-42u",
+          "label": "25U to 42U",
+          "subtitle": "A full closet or small room",
+          "description": "Standard full-height territory.",
+          "badge": "Full-height",
+          "previewLabel": "25\u201342U",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 4,
+            "core-datacenter": 5,
+            "high-density": 2
+          }
+        },
+        {
+          "id": "multi-rack",
+          "label": "42U or multiple racks",
+          "subtitle": "Row-scale deployment",
+          "description": "Buying in rows, not units.",
+          "badge": "Row scale",
+          "previewLabel": "Multi-rack",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 1,
+            "core-datacenter": 5,
+            "high-density": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "power-load",
+      "kicker": "Step 3 \u00b7 Power",
+      "title": "What is the power draw per rack?",
+      "description": "Steady-state load, not nameplate. This is the single strongest signal for cooling.",
+      "supportCopy": "If you are unsure, use your PDU's reported load.",
+      "answers": [
+        {
+          "id": "under-2kw",
+          "label": "Under 2kW",
+          "subtitle": "Switching and light compute",
+          "description": "Ambient air is fine.",
+          "badge": "Low draw",
+          "previewLabel": "<2kW",
+          "weights": {
+            "edge-site": 5,
+            "growth-network": 3,
+            "core-datacenter": 0,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "2-5kw",
+          "label": "2kW to 5kW",
+          "subtitle": "Mixed switching and servers",
+          "description": "Standard airflow handles this.",
+          "badge": "Typical",
+          "previewLabel": "2\u20135kW",
+          "weights": {
+            "edge-site": 1,
+            "growth-network": 5,
+            "core-datacenter": 3,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "5-10kw",
+          "label": "5kW to 10kW",
+          "subtitle": "Dense compute",
+          "description": "Needs deliberate airflow planning.",
+          "badge": "Dense",
+          "previewLabel": "5\u201310kW",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 2,
+            "core-datacenter": 5,
+            "high-density": 4
+          }
+        },
+        {
+          "id": "over-10kw",
+          "label": "Over 10kW",
+          "subtitle": "High-density compute or GPU",
+          "description": "Ambient air will not carry this.",
+          "badge": "Very dense",
+          "previewLabel": ">10kW",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 0,
+            "core-datacenter": 3,
+            "high-density": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "thermal",
+      "kicker": "Step 4 \u00b7 Cooling",
+      "title": "How is heat handled today?",
+      "description": "Your existing cooling approach constrains which enclosures are viable.",
+      "supportCopy": "Choose what is actually installed, not what is planned.",
+      "answers": [
+        {
+          "id": "ambient",
+          "label": "Ambient room air",
+          "subtitle": "No dedicated cooling",
+          "description": "Building HVAC only.",
+          "badge": "Ambient",
+          "previewLabel": "Ambient",
+          "weights": {
+            "edge-site": 5,
+            "growth-network": 3,
+            "core-datacenter": 0,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "passive",
+          "label": "Passive front-to-back airflow",
+          "subtitle": "Perforated doors, blanking panels",
+          "description": "Directed airflow, no active cooling in the rack.",
+          "badge": "Passive",
+          "previewLabel": "Passive",
+          "weights": {
+            "edge-site": 2,
+            "growth-network": 5,
+            "core-datacenter": 3,
+            "high-density": 0
+          }
+        },
+        {
+          "id": "in-row",
+          "label": "In-row or rack-mount cooling",
+          "subtitle": "Active cooling at the rack",
+          "description": "Cooling sits in the row with the load.",
+          "badge": "Active",
+          "previewLabel": "In-row",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 1,
+            "core-datacenter": 4,
+            "high-density": 6
+          }
+        },
+        {
+          "id": "contained",
+          "label": "Contained hot or cold aisle",
+          "subtitle": "Full containment",
+          "description": "Aisle-level containment with row cooling.",
+          "badge": "Contained",
+          "previewLabel": "Containment",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 0,
+            "core-datacenter": 5,
+            "high-density": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "access-security",
+      "kicker": "Step 5 \u00b7 Access",
+      "title": "What access control do you need?",
+      "description": "Shared and unattended spaces usually need more than a latch.",
+      "supportCopy": "Compliance requirements often decide this one.",
+      "answers": [
+        {
+          "id": "open-frame",
+          "label": "Open frame",
+          "subtitle": "No doors",
+          "description": "Maximum access and airflow, no physical security.",
+          "badge": "Open",
+          "previewLabel": "Open frame",
+          "weights": {
+            "edge-site": 0,
+            "growth-network": 2,
+            "core-datacenter": 4,
+            "high-density": 3
+          }
+        },
+        {
+          "id": "locking",
+          "label": "Locking doors",
+          "subtitle": "Keyed front and rear",
+          "description": "Standard for shared rooms.",
+          "badge": "Standard",
+          "previewLabel": "Locking",
+          "weights": {
+            "edge-site": 4,
+            "growth-network": 5,
+            "core-datacenter": 2,
+            "high-density": 1
+          }
+        },
+        {
+          "id": "audited",
+          "label": "Keyed with audit trail",
+          "subtitle": "Logged access",
+          "description": "Tracks who opened the rack and when.",
+          "badge": "Audited",
+          "previewLabel": "Audited",
+          "weights": {
+            "edge-site": 3,
+            "growth-network": 2,
+            "core-datacenter": 4,
+            "high-density": 2
+          }
+        },
+        {
+          "id": "biometric",
+          "label": "Biometric or badge",
+          "subtitle": "Credentialed entry",
+          "description": "Integrated with facility access control.",
+          "badge": "Secure",
+          "previewLabel": "Biometric",
+          "weights": {
+            "edge-site": 1,
+            "growth-network": 1,
+            "core-datacenter": 4,
+            "high-density": 3
+          }
+        }
+      ]
+    }
+  ],
+  "personaOrder": [
+    "edge-site",
+    "growth-network",
+    "core-datacenter",
+    "high-density"
+  ],
+  "personas": [
+    {
+      "id": "edge-site",
+      "title": "Edge Site Builder",
+      "kicker": "Compact & remote",
+      "description": "You are standing up networking in branch offices, retail sites, or closets where floor space is scarce and nobody is on site to service it.",
+      "collection": {
+        "title": "Wall-Mount & Low-U Enclosures",
+        "description": "Shallow, lockable enclosures that mount to a wall and hold a switch, a patch panel, and a small UPS.",
+        "badge": "Best for edge sites",
+        "route": "/racks",
+        "limit": 3,
+        "sort": "position_DESC",
+        "search": {
+          "categoryPath": [
+            "products/racks"
+          ]
+        }
+      }
+    },
+    {
+      "id": "growth-network",
+      "title": "Growing Network",
+      "kicker": "Scaling IDF",
+      "description": "Your switch count keeps climbing and the closet you inherited is out of room, out of ports, and out of airflow.",
+      "collection": {
+        "title": "Mid-Height Network Enclosures",
+        "description": "24U to 42U enclosures with the cable management and airflow to keep a growing switch stack serviceable.",
+        "badge": "Most popular",
+        "route": "/racks",
+        "limit": 3,
+        "sort": "position_DESC",
+        "search": {
+          "categoryPath": [
+            "products/racks"
+          ]
+        }
+      }
+    },
+    {
+      "id": "core-datacenter",
+      "title": "Core Data Center",
+      "kicker": "Full-height density",
+      "description": "You run a dedicated room or hall and buy racks by the row, with structured power and cooling already in the plan.",
+      "collection": {
+        "title": "Full-Height Server Racks",
+        "description": "42U and taller open-frame and enclosed racks built for structured deployment at row scale.",
+        "badge": "Built for scale",
+        "route": "/racks",
+        "limit": 3,
+        "sort": "position_DESC",
+        "search": {
+          "categoryPath": [
+            "products/racks"
+          ]
+        }
+      }
+    },
+    {
+      "id": "high-density",
+      "title": "High-Density Compute",
+      "kicker": "Thermal-critical",
+      "description": "Your per-rack power draw is well past what ambient air can carry, so cooling and power distribution drive the rack choice.",
+      "collection": {
+        "title": "Cooling & Critical Power",
+        "description": "In-row cooling and rack-mount UPS sized for high-draw compute where thermal headroom is the constraint.",
+        "badge": "Thermal-first",
+        "route": "/cooling",
+        "limit": 3,
+        "sort": "position_DESC",
+        "search": {
+          "categoryPath": [
+            "products/cooling-equipment"
+          ]
+        }
+      }
+    }
+  ],
+  "crossCategoryModules": [
+    {
+      "id": "switching",
+      "title": "Switching",
+      "badge": "Pairs with your rack",
+      "description": "Access and aggregation switches sized for the port count you just described.",
+      "route": "/switching",
+      "limit": 3,
+      "sort": "position_DESC",
+      "search": {
+        "categoryPath": [
+          "products/switching"
+        ]
+      }
+    },
+    {
+      "id": "cables",
+      "title": "Cables & Management",
+      "badge": "Do not skip this",
+      "description": "Patch cable and management hardware \u2014 the difference between a rack you can service and one you cannot.",
+      "route": "/cables",
+      "limit": 3,
+      "sort": "position_DESC",
+      "search": {
+        "categoryPath": [
+          "products/cables"
+        ]
+      }
+    },
+    {
+      "id": "critical-power",
+      "title": "Critical Power",
+      "badge": "Keep it up",
+      "description": "Rack-mount UPS and power distribution matched to the draw you reported.",
+      "route": "/critical-power",
+      "limit": 3,
+      "sort": "position_DESC",
+      "search": {
+        "categoryPath": [
+          "products/critical-power-equipment"
+        ]
+      }
+    }
+  ]
+}

@@ -30,22 +30,31 @@ The block uses a DA key-value model.
 
 ## Schema Contract
 
-The JSON schema can define:
+**Required.** `rankPersonas` dereferences these directly, so the block throws at the
+results step without them:
 
-- `id`
-- `version`
-- `theme`
-- `contactHref`
-- `compareHref`
-- `tieBreakerOrder[]`
-- `hero`
-- `questions[]`
-- `questions[].answers[]`
-- `questions[].answers[].weights`
-- `personas[]`
-- `personas[].collection`
+- `personaOrder[]` — persona ids, in scoring order; `answers[].weights` keys are looked
+  up against this list. **Every persona in `personas[]` must appear here**, or scoring
+  throws on the one that is missing (measured: dropping an id gives
+  `TypeError: Cannot read properties of undefined (reading 'total')`). A surplus id that
+  has no matching persona is harmless.
+- `personas[]` and `personas[].collection`
+- `questions[]`, `questions[].answers[]`, `questions[].answers[].weights`
+- `tieBreakerOrder[]` — question ids, consulted in order when totals tie
+
+Optional:
+
+- `id`, `version`, `theme`, `contactHref`, `compareHref`, `hero`
 - `crossCategoryModules[]`
-- optional `media` objects on hero, questions, personas, and modules
+- `media` objects on hero, questions, personas, and modules
+
+### Product hydration
+
+`collection.search` and each cross-category module accept `categoryPath[]` and/or
+`skus[]`. Both are matched against Adobe Commerce natively — `categoryPath` takes the
+**full** path (`products/racks`, not `racks`), and a `visibility` filter is always
+appended. Point these at categories that actually exist, or the result tiles render
+empty: the block cannot tell a wrong path from an empty one.
 
 ## Runtime Behavior
 

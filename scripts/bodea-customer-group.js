@@ -37,6 +37,20 @@ const CUSTOMER_GROUP_UID_QUERY = `
 
 const CUSTOMER_GROUP_UID_SESSION_KEY = 'DROPINS_CUSTOMER_GROUP_UID';
 const CUSTOMER_GROUP_HEADER = 'Magento-Customer-Group';
+/**
+ * Emitted AFTER the new group header and cache-buster are both applied, and
+ * only when the group actually changed.
+ *
+ * Blocks that memoize catalog responses need to drop those results when the
+ * shopper's group changes, or a signed-in buyer keeps seeing guest prices. They
+ * cannot key off `authenticated` for that: this module's own handler is async,
+ * so a listener that refetches on `authenticated` races the header update and
+ * is liable to re-fetch with the OLD group. Listening here removes the race.
+ *
+ * Fire-and-forget by design — nothing is required to be listening, so the
+ * storefront works the same with or without a consumer.
+ */
+const CUSTOMER_GROUP_CHANGED_EVENT = 'bodea/customer-group-changed';
 // base64("0") — the Commerce guest group. Guests always send this header so
 // guest-group catalog pricing works (upstream DEFAULT_GUEST_CUSTOMER_GROUP_UID).
 const DEFAULT_GUEST_CUSTOMER_GROUP_UID = 'MA==';
@@ -130,7 +144,10 @@ function fetchCustomerGroupUid() {
  * @param {{force?: boolean}} [options]
  */
 async function refreshCustomerGroupHeader({ force = false } = {}) {
-  const cachedUid = !force && getStoredCustomerGroupUid();
+  // Captured before anything is stored, so the comparison at the end reflects
+  // the group in force when this call started.
+  const previousUid = getStoredCustomerGroupUid();
+  const cachedUid = !force && previousUid;
   const customerGroupUid = cachedUid || await fetchCustomerGroupUid();
   const normalizedUid = customerGroupUid || DEFAULT_GUEST_CUSTOMER_GROUP_UID;
   const customerGroupHeader = await hashCustomerGroupUid(normalizedUid);
@@ -146,6 +163,14 @@ async function refreshCustomerGroupHeader({ force = false } = {}) {
   storeCustomerGroupUid(normalizedUid);
   CS_FETCH_GRAPHQL.setFetchGraphQlHeader(CUSTOMER_GROUP_HEADER, customerGroupHeader);
   await refreshCatalogServiceEndpoint({ [CUSTOMER_GROUP_HEADER]: customerGroupHeader });
+
+  // Announce only a real transition, and only once the header + endpoint are
+  // both live. `previousUid` is null on a first load in a fresh session, which
+  // is not a change — emitting there would make every page load look like a
+  // group switch to consumers.
+  if (previousUid && previousUid !== normalizedUid) {
+    events.emit(CUSTOMER_GROUP_CHANGED_EVENT, { customerGroupUid: normalizedUid });
+  }
 }
 
 async function onAuthChange() {

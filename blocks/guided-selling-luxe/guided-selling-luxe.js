@@ -1,3 +1,4 @@
+import { events } from '@dropins/tools/event-bus.js';
 import { search } from '@dropins/storefront-product-discovery/api.js';
 import { createOptimizedPicture, readBlockConfig } from '../../scripts/aem.js';
 import { getProductLink } from '../../scripts/commerce.js';
@@ -17,6 +18,13 @@ import {
 /* eslint-enable import/extensions */
 
 const SEARCH_SCOPE = 'popover';
+/**
+ * Emitted by `scripts/bodea-customer-group.js` once a new `Magento-Customer-Group`
+ * header is live. Deliberately a bare string rather than an import: the block
+ * must keep working on storefronts that do not vendor that script, where the
+ * event simply never arrives.
+ */
+const CUSTOMER_GROUP_CHANGED_EVENT = 'bodea/customer-group-changed';
 const STAGE_SHELF_COUNT = 8;
 const DEFAULT_PRODUCT_COUNT = 3;
 const ARROW_KEYS = new Set([
@@ -1029,6 +1037,23 @@ export default async function decorate(block) {
     }
 
     render(runtime, schema, state, false);
+
+    // Signing in or out changes the shopper's group, and with it the contract
+    // price of everything already hydrated. `productCache` would otherwise keep
+    // serving the previous group's prices for the rest of the page session, so
+    // a B2B buyer who signs in mid-quiz would still be shown guest pricing.
+    //
+    // Re-render only when results are on screen: mid-quiz nothing is priced
+    // yet, and dropping the cache alone means the next hydration is correct.
+    events.on(CUSTOMER_GROUP_CHANGED_EVENT, () => {
+      // The event bus outlives any one block; a re-decorated or removed block
+      // must not keep repainting a detached tree.
+      if (!block.isConnected) return;
+      runtime.productCache.clear();
+      if (state.completed) {
+        render(runtime, schema, state, false);
+      }
+    });
   } catch (error) {
     renderError(block, error.message || 'Please try again or browse the catalog directly.');
   }

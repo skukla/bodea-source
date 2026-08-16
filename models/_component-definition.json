@@ -53,6 +53,9 @@
           "...": "../blocks/blog-post/_*.json#/definitions"
         },
         {
+          "...": "../blocks/cards-list/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/catalog-highlights/_*.json#/definitions"
         },
         {
@@ -63,6 +66,9 @@
         },
         {
           "...": "../blocks/embed/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/features-grid/_*.json#/definitions"
         },
         {
           "...": "../blocks/form/_*.json#/definitions"

@@ -1,0 +1,62 @@
+{
+  "definitions": [
+    {
+      "title": "Features Grid",
+      "id": "features-grid",
+      "model": "features-grid",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "features-grid",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "section-tag",
+          "label": "Section tag",
+          "description": "Small eyebrow label above the title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta-label",
+          "label": "CTA label"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta-url",
+          "label": "CTA URL",
+          "description": "Relative path, e.g. /racks"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "card",
+          "label": "Card",
+          "description": "One row per card, pipe-delimited and order-sensitive: variant | icon | eyebrow | title | description | cta-label | cta-url. Variant is featured, default, or wide."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

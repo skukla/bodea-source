@@ -284,6 +284,18 @@
           "model": "blog-post"
         },
         {
+          "title": "Cards List",
+          "id": "cards-list",
+          "plugins": {
+            "da": {
+              "name": "cards-list",
+              "rows": 2,
+              "columns": 2,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
           "title": "Catalog Highlights",
           "id": "catalog-highlights",
           "model": "catalog-highlights",
@@ -363,6 +375,16 @@
                   "selector": "div>div>p>a"
                 }
               ]
+            }
+          }
+        },
+        {
+          "title": "Features Grid",
+          "id": "features-grid",
+          "model": "features-grid",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
             }
           }
         },

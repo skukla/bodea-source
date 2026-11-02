@@ -42,3 +42,5 @@ this repo only supplies brand assets on top of that generation.
 
 Pages publish at `https://main--bodea-source--skukla.aem.live/<path>`
 (preview: `https://main--bodea-source--skukla.aem.page/<path>`).
+
+**Releasing:** a push to `main` reaches nobody; a published release does. See [RELEASING.md](RELEASING.md).

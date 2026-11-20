@@ -1,7 +1,7 @@
 {
   "name": "@adobe/aem-boilerplate-commerce",
   "private": true,
-  "version": "6.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Starter project for Adobe Commerce on Edge Delivery Services",
   "scripts": {
     "lint:js": "eslint .",
